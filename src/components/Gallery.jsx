@@ -136,19 +136,7 @@ export default function Gallery() {
       ],
     },
     {
-      title: "Progetti e Ristrutturazioni Private",
-      category: "residenziale",
-      categoryLabel: "Residenziale",
-      desc: "Interventi mirati di ridistribuzione spaziale e ammodernamento per residenze private e laboratori (progetti Maiellaro, Pasticciere, Guido).",
-      cover: "/1-maiellaro.png",
-      images: [
-        "/1-maiellaro.png",
-        "/2-pasticciere.png",
-        "/3-guido.png",
-      ],
-    },
-  ];
-
+  
   const filteredProjects =
     activeFilter === "all"
       ? projects
