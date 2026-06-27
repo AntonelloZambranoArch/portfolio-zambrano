@@ -5,9 +5,9 @@ import { ArrowDown, Briefcase, Award } from "lucide-react";
 
 export default function Hero() {
   const images = [
-    "/immagini/rendering/VILLA-PROG-1.png",
-    "/immagini/rendering/PORTICO-2-RENDER.png",
-    "/immagini/rendering/CUCINA-2.png"
+    "/VILLA-PROG-1.png",
+    "/PORTICO-2-RENDER.png",
+    "/CUCINA-2.png"
   ];
 
   const [currentIdx, setCurrentIdx] = useState(0);
