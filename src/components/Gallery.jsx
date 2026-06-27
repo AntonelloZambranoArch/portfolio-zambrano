@@ -114,7 +114,7 @@ export default function Gallery() {
         "/aci/10-pasquale.png",
         "/aci/11-antonino.png",
         "/aci/21-lucio.png",
-        "/aci/Senza titolo.png",
+        "/aci/Senza titolo.png", "/aci/12-citro.png", "/aci/13-ascolese.png", "/aci/14-mimmo.png", "/aci/15-verzella.png", "/aci/16-mimmo.png", "/aci/17-izzo.png", "/aci/18-annalea.png", "/aci/19-dificdio.png", "/aci/20-impresa-napoli.png", "/aci/5-vincenzo.png", "/aci/6-ascolese.png", "/aci/8-pasquale.png", "/aci/9-gaetanino.png",
       ],
     },
     {
@@ -132,7 +132,7 @@ export default function Gallery() {
         "/TERRAZZO-1.png",
         "/PALAZZINA-2.png",
         "/RENDER-4-SOGG.jpg",
-        "/RENDER-1-LIBRERIA.jpg",
+        "/RENDER-1-LIBRERIA.jpg", "/1-S10.png", "/5-S10.png", "/BAGNO-10-4.png", "/BAGNO-GIORNO-3.png", "/BLU-1.png", "/CAMINO-11.jpg", "/CAMINO-9.png", "/CUCINA-1.png", "/CUCINA-3.jpg", "/ELVIRA-C.png", "/ERNESTO-CY-6B.png", "/IMAG-4.png", "/INTERNO-3.jpg", "/LECCE-12.png", "/LECCE-5.png", "/PART-1.png", "/PROG-1A.png", "/PROG-ASC-4.png", "/PROSPETTO-FRONTALE.png", "/REND-14.jpg", "/REND-8.jpg", "/RENDER-1.png", "/RENDER-10-SOPPALCO.jpg", "/RENDER-2.png", "/RENDER-3.png", "/RENDER-4.png", "/RENDER-5-K.jpg", "/RENDER-5.png", "/RENDER-6-K.jpg", "/RENDER-6.png", "/RENDER-7-LETTO.jpg", "/RENDER-8-LETTO.jpg", "/RENDER-8.png", "/RENDER-9.png", "/RENDER-CART-2.jpg", "/RESC-1.png", "/ROMA-1.png", "/SOGG-4.png", "/SOGG-6.png", "/TAVERNETTA-3.png", "/VISTA-4.png", "/_RENDER-G.png", "/elvira-B.png", "/garage-4.png", "/persiane.png",
       ],
     },
   ];
