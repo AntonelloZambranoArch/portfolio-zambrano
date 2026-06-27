@@ -30,20 +30,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <p className="font-bold text-gray-300 text-base mb-1">
+              <p className="font-display text-gray-300 text-lg mb-1 tracking-wide">
                 Arch. Antonio Zambrano
               </p>
               <p className="font-light text-xs max-w-md">
-                Iscritto all'Albo dell'Ordine degli Architetti P.P.C. della Provincia di Salerno col n. 1142. Specializzato in calcolo strutturale, direzione lavori e coordinamento sicurezza (D.Lgs. 81/08).
+                Iscritto all&apos;Albo dell&apos;Ordine degli Architetti P.P.C. della Provincia di Salerno col n. 1142. Specializzato in calcolo strutturale, direzione lavori e coordinamento sicurezza (D.Lgs. 81/08).
               </p>
             </div>
-            
+
             <div className="flex flex-col items-center md:items-end gap-2 text-xs">
               <p className="font-light">
                 &copy; {new Date().getFullYear()} Arch. Antonio Zambrano. Tutti i diritti riservati.
               </p>
               <p className="text-gray-600 font-light">
-                Sviluppato con Next.js & Tailwind CSS.
+                Sviluppato con Next.js &amp; Tailwind CSS.
               </p>
             </div>
           </div>
