@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Folder, Layers, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 import Lightbox from "./Lightbox";
 
 export default function Gallery() {
@@ -114,7 +114,7 @@ export default function Gallery() {
         "/aci/10-pasquale.png",
         "/aci/11-antonino.png",
         "/aci/21-lucio.png",
-        "/aci/Senza titolo.png", "/aci/12-citro.png", "/aci/13-ascolese.png", "/aci/14-mimmo.png", "/aci/15-verzella.png", "/aci/16-mimmo.png", "/aci/17-izzo.png", "/aci/18-annalea.png", "/aci/19-dificdio.png", "/aci/20-impresa-napoli.png", "/aci/5-vincenzo.png", "/aci/6-ascolese.png", "/aci/8-pasquale.png", "/aci/9-gaetanino.png",
+        "/aci/Senza titolo.png",
       ],
     },
     {
@@ -132,13 +132,13 @@ export default function Gallery() {
         "/TERRAZZO-1.png",
         "/PALAZZINA-2.png",
         "/RENDER-4-SOGG.jpg",
-        "/RENDER-1-LIBRERIA.jpg", "/1-S10.png", "/5-S10.png", "/BAGNO-10-4.png", "/BAGNO-GIORNO-3.png", "/BLU-1.png", "/CAMINO-11.jpg", "/CAMINO-9.png", "/CUCINA-1.png", "/CUCINA-3.jpg", "/ELVIRA-C.png", "/ERNESTO-CY-6B.png", "/IMAG-4.png", "/INTERNO-3.jpg", "/LECCE-12.png", "/LECCE-5.png", "/PART-1.png", "/PROG-1A.png", "/PROG-ASC-4.png", "/PROSPETTO-FRONTALE.png", "/REND-14.jpg", "/REND-8.jpg", "/RENDER-1.png", "/RENDER-10-SOPPALCO.jpg", "/RENDER-2.png", "/RENDER-3.png", "/RENDER-4.png", "/RENDER-5-K.jpg", "/RENDER-5.png", "/RENDER-6-K.jpg", "/RENDER-6.png", "/RENDER-7-LETTO.jpg", "/RENDER-8-LETTO.jpg", "/RENDER-8.png", "/RENDER-9.png", "/RENDER-CART-2.jpg", "/RESC-1.png", "/ROMA-1.png", "/SOGG-4.png", "/SOGG-6.png", "/TAVERNETTA-3.png", "/VISTA-4.png", "/_RENDER-G.png", "/elvira-B.png", "/garage-4.png", "/persiane.png",
+        "/RENDER-1-LIBRERIA.jpg",
       ],
     },
   ];
 
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
+  const filteredProjects = activeFilter === "all"
+    ? projects
     : projects.filter((p) => p.category === activeFilter);
 
   const openLightbox = (projIdx, imgIdx = 0) => {
@@ -153,33 +153,57 @@ export default function Gallery() {
 
   return (
     <section id="galleria" className="py-24 bg-[#090d16]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-primary uppercase tracking-widest text-sm font-bold">Portfolio Lavori</h2>
-          <h3 className="text-4xl text-white font-bold mt-2">Galleria Progetti</h3>
+          <h2 className="eyebrow text-primary uppercase text-sm font-semibold">Portfolio Lavori</h2>
+          <h3 className="font-display text-3xl sm:text-4xl text-white font-semibold mt-3">Galleria Progetti</h3>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-14">
           {filters.map((f) => (
-            <button 
-              key={f.id} 
+            <button
+              key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition ${activeFilter === f.id ? "bg-primary text-white" : "bg-gray-800 text-gray-400 hover:bg-gray-700"}`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                activeFilter === f.id
+                  ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
+                  : "bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-gray-200"
+              }`}
             >
               {f.name}
             </button>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((p) => {
             const globalIdx = projects.findIndex((pro) => pro.title === p.title);
             return (
-              <div key={p.title} onClick={() => openLightbox(globalIdx)} className="cursor-pointer group bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-primary transition">
-                <img src={p.cover} alt={p.title} className="w-full aspect-video object-cover" />
+              <div
+                key={p.title}
+                onClick={() => openLightbox(globalIdx)}
+                className="cursor-pointer group bg-gray-900/40 border border-gray-800/60 rounded-2xl overflow-hidden hover:border-primary/60 transition-all duration-300"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.cover}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090d16]/90 via-[#090d16]/10 to-transparent" />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-[#090d16]/70 text-primary border border-primary/30 backdrop-blur-sm">
+                    {p.categoryLabel}
+                  </span>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-medium shadow-lg">
+                      <Eye className="h-4 w-4" /> Vedi progetto
+                    </span>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <h4 className="text-white font-bold text-lg">{p.title}</h4>
-                  <p className="text-gray-400 text-sm mt-2">{p.desc}</p>
+                  <h4 className="font-display text-lg font-semibold text-white">{p.title}</h4>
+                  <p className="text-gray-400 text-sm mt-2 leading-relaxed line-clamp-2">{p.desc}</p>
                 </div>
               </div>
             );
@@ -194,6 +218,7 @@ export default function Gallery() {
           onClose={closeLightbox}
           onPrev={() => setLightboxState(p => ({...p, imageIndex: (p.imageIndex - 1 + activeProject.images.length) % activeProject.images.length}))}
           onNext={() => setLightboxState(p => ({...p, imageIndex: (p.imageIndex + 1) % activeProject.images.length}))}
+          onSelectIndex={(idx) => setLightboxState(p => ({...p, imageIndex: idx}))}
         />
       )}
     </section>

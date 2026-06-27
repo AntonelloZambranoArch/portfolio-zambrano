@@ -34,18 +34,18 @@ export default function Bio() {
   return (
     <section id="bio" className="py-24 bg-[#090d16] border-t border-gray-800/40 relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Side: Biography text and stats */}
           <div className="lg:col-span-7 space-y-8">
             <div>
-              <h2 className="text-sm font-semibold tracking-wider text-primary uppercase mb-2">Profilo Professionale</h2>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="eyebrow text-sm font-semibold text-primary uppercase mb-3">Profilo Professionale</h2>
+              <h3 className="font-display text-3xl sm:text-4xl font-semibold text-white">
                 Arch. Antonio Zambrano
               </h3>
-              <p className="text-lg text-gray-400 font-light mt-1">
+              <p className="text-lg text-gray-400 font-light mt-2">
                 Architetto e Tecnico Strutturista
               </p>
             </div>
@@ -53,9 +53,9 @@ export default function Bio() {
             <p className="text-gray-300 leading-relaxed font-light text-lg">
               Sono un architetto e tecnico strutturista operante nel settore edile e delle opere civili. Il mio percorso professionale si basa sulla capacità di risolvere problemi complessi in contesti dove la continuità operativa, il rigore normativo e la sicurezza sono priorità assolute.
             </p>
-            
+
             <p className="text-gray-300 leading-relaxed font-light text-lg">
-              In trent'anni di attività ho diretto e coordinato oltre 60 cantieri, affrontando sfide strutturali ed infrastrutturali in contesti ad alta complessità e densità urbana. La mia professionalità spazia dalla progettazione di massima ed esecutiva alla direzione dei lavori, fino al coordinamento della sicurezza in fase di progettazione ed esecuzione (CSP/CSE), dove mantengo un record di zero infortuni.
+              In trent&apos;anni di attività ho diretto e coordinato oltre 60 cantieri, affrontando sfide strutturali ed infrastrutturali in contesti ad alta complessità e densità urbana. La mia professionalità spazia dalla progettazione di massima ed esecutiva alla direzione dei lavori, fino al coordinamento della sicurezza in fase di progettazione ed esecuzione (CSP/CSE), dove mantengo un record di zero infortuni.
             </p>
 
             {/* Stats Grid */}
@@ -65,7 +65,7 @@ export default function Bio() {
                   key={idx}
                   className="bg-gray-900/40 border border-gray-800/50 rounded-xl p-4 text-center backdrop-blur-sm shadow-sm"
                 >
-                  <div className="text-2xl sm:text-3xl font-extrabold text-primary mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
                     {stat.value}
                   </div>
                   <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">
@@ -78,10 +78,10 @@ export default function Bio() {
 
           {/* Right Side: Competencies Grid */}
           <div className="lg:col-span-5 space-y-6">
-            <h4 className="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">
+            <h4 className="font-display text-xl font-semibold text-white mb-6 border-b border-gray-800 pb-3">
               Competenze Chiave
             </h4>
-            
+
             <div className="space-y-6">
               {expertises.map((item, idx) => (
                 <div

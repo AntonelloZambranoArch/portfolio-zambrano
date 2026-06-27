@@ -37,13 +37,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <a href="#home" className="text-xl font-bold tracking-wider text-white hover:text-primary transition-colors duration-200">
+            <a href="#home" className="font-display text-lg sm:text-xl tracking-wide text-white hover:text-primary transition-colors duration-200">
               Arch. <span className="text-primary">Antonio</span> Zambrano
             </a>
           </div>
-          
+
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -81,7 +81,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-gray-300 hover:text-primary transition-colors duration-200 w-full text-center py-2 border-b border-gray-800/30"
+                className="text-base font-medium text-gray-300 hover:text-primary transition-colors duration-200 w-full text-center py-2 border-b border-gray-800/30"
               >
                 {link.name}
               </a>

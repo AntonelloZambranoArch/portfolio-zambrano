@@ -7,7 +7,7 @@ export default function Hero() {
   const images = [
     "/VILLA-PROG-1.png",
     "/PORTICO-2-RENDER.png",
-    "/CUCINA-2.png"
+    "/CUCINA-2.png",
   ];
 
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -38,21 +38,21 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20 flex flex-col items-center">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 uppercase tracking-wider animate-pulse">
-          <Award className="h-3.5 w-3.5" /> Architettura & Ingegneria Strutturale
+        <span className="eyebrow inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 uppercase">
+          <Award className="h-3.5 w-3.5" /> Architettura &amp; Ingegneria Strutturale
         </span>
-        
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
+
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-white mb-6">
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
             Arch. Antonio Zambrano
           </span>
-          <span className="block text-2xl sm:text-3xl md:text-4xl text-primary font-light tracking-wide mt-2">
+          <span className="block font-sans text-xl sm:text-2xl md:text-3xl text-primary font-light tracking-wide mt-3">
             Progettazione e Direzione Lavori dal 1996
           </span>
         </h1>
-        
+
         <p className="max-w-2xl text-base sm:text-lg md:text-xl text-gray-400 font-light mb-10 leading-relaxed">
-          Trent'anni di esperienza nella gestione integrale di cantieri e nella progettazione di strutture complesse. Rigore tecnico, sicurezza e precisione formale al servizio del territorio.
+          Trent&apos;anni di esperienza nella gestione integrale di cantieri e nella progettazione di strutture complesse. Rigore tecnico, sicurezza e precisione formale al servizio del territorio.
         </p>
 
         {/* CTA Buttons */}
