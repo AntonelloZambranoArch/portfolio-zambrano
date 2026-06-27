@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return { title: "Progetto non trovato | Arch. Antonello Zambrano" };
@@ -19,8 +20,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function CaseStudioPage({ params }) {
-  const project = getProjectBySlug(params.slug);
+export default async function CaseStudioPage({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
