@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0a09;
+  --background: #0d0c0a;
   --foreground: #f4ede1;
   --primary: #b08d57;
   --accent: #c9a876;
@@ -16,8 +16,8 @@
   --color-accent: var(--accent);
   --color-card-bg: var(--card-bg);
   --color-muted: var(--text-muted);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
 html {
@@ -29,6 +29,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   font-weight: 300;
+  font-size: 17px;
+  letter-spacing: 0.005em;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -56,3 +58,26 @@ body {
 }
 .kenburns { animation: kenburns 14s ease-out forwards; will-change: transform; }
 @media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
+
+/* Sezioni su fondo travertino: stessi token, valori chiari */
+.theme-ivory {
+  --background: #ece5d9;
+  --foreground: #1c1913;
+  --primary: #7d5f33;
+  --accent: #8a6a3a;
+  --card-bg: #ddd3c1;
+  --text-muted: #5e5546;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); }
+
+/* Ingresso dell'apertura: un solo momento orchestrato */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.rise { opacity: 0; animation: rise 1.4s cubic-bezier(.2,.7,.2,1) .35s forwards; }
+.rise-2 { animation-delay: .75s; }
+.rise-3 { animation-delay: 1.1s; }
+@media (prefers-reduced-motion: reduce) { .rise { opacity: 1; animation: none; } }
+
+:focus-visible { outline: 1px solid var(--primary); outline-offset: 4px; }

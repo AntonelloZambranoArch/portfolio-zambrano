@@ -1,115 +1,78 @@
-"use client";
+const stats = [
+  { value: "30+", label: "anni di esperienza" },
+  { value: "60+", label: "cantieri coordinati" },
+  { value: "0", label: "infortuni sul lavoro" },
+  { value: "100%", label: "conformità normativa" },
+];
 
-import { Sparkles, ShieldCheck, FileCheck, Landmark } from "lucide-react";
+const expertises = [
+  {
+    title: "Interior design e alta progettazione",
+    desc: "Spazi sartoriali: arredi su misura, materiali pregiati e illuminazione d'atmosfera, per ambienti dove estetica e funzione coincidono.",
+  },
+  {
+    title: "Progettazione strutturale",
+    desc: "Calcoli e verifiche strutturali complesse nel pieno rispetto delle NTC 2018 e degli Eurocodici.",
+  },
+  {
+    title: "Direzione lavori e sicurezza",
+    desc: "Coordinamento di cantieri civili e industriali, con ruolo di CSP e CSE e un record di sicurezza senza infortuni.",
+  },
+  {
+    title: "Iscrizione all'Ordine",
+    desc: "Albo degli Architetti Pianificatori Paesaggisti e Conservatori della Provincia di Salerno, n. 1142.",
+  },
+];
 
 export default function Bio() {
-
-  const stats = [
-    { value: "30+", label: "Anni di Esperienza" },
-    { value: "60+", label: "Cantieri Coordinati" },
-    { value: "0", label: "Infortuni sul Lavoro" },
-    { value: "100%", label: "Conformità Normativa" },
-  ];
-
-  const expertises = [
-    {
-      icon: <Sparkles className="h-5 w-5 text-primary" />,
-      title: "Interior Design & Alta Progettazione",
-      desc: "Creazione di spazi sartoriali esclusivi: arredi su misura, materiali pregiati e illuminazione d'atmosfera, per ambienti che uniscono estetica e funzionalità.",
-    },
-    {
-      icon: <ShieldCheck className="h-5 w-5 text-primary" />,
-      title: "Progettazione Strutturale",
-      desc: "Calcoli e verifiche strutturali complesse nel pieno rispetto delle normative NTC 2018 e degli Eurocodici.",
-    },
-    {
-      icon: <FileCheck className="h-5 w-5 text-primary" />,
-      title: "Direzione Lavori & Sicurezza",
-      desc: "Coordinamento completo di cantieri civili ed industriali, con ruolo di CSP/CSE e record impeccabile di sicurezza sul lavoro.",
-    },
-    {
-      icon: <Landmark className="h-5 w-5 text-primary" />,
-      title: "Iscrizione Ordine Architetti",
-      desc: "Iscritto all'Albo dell'Ordine degli Architetti Pianificatori Paesaggisti e Conservatori della Provincia di Salerno col n. 1142.",
-    },
-  ];
-
   return (
-    <section id="bio" className="py-24 bg-background border-t border-foreground/10 relative">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
+    <section id="bio" className="theme-ivory py-28 sm:py-36">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-7">
+            <h2 className="font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl">
+              Architetto e strutturista, con trent'anni di cantiere.
+            </h2>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-7 space-y-8">
-            <div className="flex flex-col sm:flex-row gap-8 items-start">
-              <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden bg-card-bg">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/logo-az-avatar.webp"
-                  alt="Studio Architettura Zambrano — logo"
-                  width="160"
-                  height="160"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h2 className="text-sm font-light tracking-wider text-primary uppercase mb-2">
-                  Profilo Professionale
-                </h2>
-                <h3 className="font-serif text-3xl sm:text-4xl font-medium text-foreground">
-                  Arch. Antonello Zambrano
-                </h3>
-                <p className="text-lg text-foreground/50 font-light mt-1">
-                  Architetto e Tecnico Strutturista
+            <div className="mt-12 flex gap-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-az-avatar.webp"
+                alt="Studio Architettura Zambrano, logo"
+                width="160"
+                height="160"
+                className="hidden h-36 w-36 flex-shrink-0 sm:block"
+              />
+              <div className="max-w-xl space-y-6 text-lg leading-[1.75] text-foreground/75">
+                <p>
+                  Sono un architetto del settore edile e delle opere civili, con una sensibilità particolare per gli spazi esclusivi su misura. Il mio lavoro unisce visione estetica, rigore normativo e capacità di governare la complessità tecnica.
+                </p>
+                <p>
+                  In trent'anni ho diretto e coordinato oltre 60 cantieri, dalla progettazione di massima ed esecutiva all'interior design, fino alla direzione dei lavori e al coordinamento della sicurezza.
                 </p>
               </div>
             </div>
 
-            <p className="text-foreground/70 leading-relaxed font-light text-lg">
-              Sono un architetto operante nel settore edile e delle opere civili, con una particolare sensibilità per la progettazione di spazi esclusivi su misura. Il mio percorso professionale unisce visione estetica, rigore normativo e capacità di gestire la complessità tecnica dei progetti più ambiziosi.
-            </p>
-
-            <p className="text-foreground/70 leading-relaxed font-light text-lg">
-              In trent'anni di attività ho diretto e coordinato oltre 60 cantieri, affrontando sfide progettuali e strutturali in contesti ad alta complessità. La mia professionalità spazia dalla progettazione di massima ed esecutiva, all'interior design su misura, fino alla direzione dei lavori e al coordinamento della sicurezza (CSP/CSE), dove mantengo un record di zero infortuni.
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="border border-foreground/10 p-4 text-center">
-                  <div className="font-serif text-2xl sm:text-3xl font-medium text-primary mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-foreground/50 font-light uppercase tracking-wider">
-                    {stat.label}
-                  </div>
+            <dl className="mt-16 grid grid-cols-2 gap-y-10 border-t border-foreground/15 pt-10 sm:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <dt className="font-serif text-5xl font-light text-primary sm:text-6xl">{s.value}</dt>
+                  <dd className="mt-2 text-base text-foreground/60">{s.label}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
 
-          <div className="lg:col-span-5 space-y-6">
-            <h4 className="font-serif text-xl font-medium text-foreground mb-6 border-b border-foreground/10 pb-3">
-              Competenze Chiave
-            </h4>
-
-            <div className="space-y-6">
-              {expertises.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex gap-4 p-5 border border-foreground/10 hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="p-2.5 border border-primary/20">{item.icon}</div>
-                  </div>
-                  <div>
-                    <h5 className="text-base font-medium text-foreground mb-1">{item.title}</h5>
-                    <p className="text-sm text-foreground/60 leading-relaxed font-light">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
+          <div className="lg:col-span-5 lg:pt-4">
+            <h3 className="font-serif text-3xl font-light text-foreground">Competenze</h3>
+            <ul className="mt-6 divide-y divide-foreground/15 border-y border-foreground/15">
+              {expertises.map((e) => (
+                <li key={e.title} className="py-7">
+                  <h4 className="font-serif text-2xl text-foreground">{e.title}</h4>
+                  <p className="mt-2 text-base leading-relaxed text-foreground/65">{e.desc}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

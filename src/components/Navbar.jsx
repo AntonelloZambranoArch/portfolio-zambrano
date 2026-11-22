@@ -35,11 +35,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <a
               href="#home"
-              className="flex items-center gap-3 font-serif text-xl sm:text-2xl tracking-wide text-foreground hover:text-primary transition-colors duration-200"
+              className="flex items-center gap-3 font-serif text-xl sm:text-2xl font-light tracking-[0.06em] text-foreground hover:text-primary transition-colors duration-200"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-az-trasp.webp" alt="AZ" width="48" height="48" className="h-11 w-11 sm:h-12 sm:w-12" />
-              <span>Arch. <span className="text-primary">Antonello</span> Zambrano</span>
+              <img src="/logo-az-trasp.webp" alt="AZ" width="48" height="48" className="h-12 w-12 sm:h-14 sm:w-14" />
+              <span className="max-w-[10.5rem] text-lg leading-[1.1] sm:max-w-none sm:text-2xl sm:leading-none">Studio Architettura Zambrano</span>
             </a>
           </div>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-light tracking-wide text-foreground/70 hover:text-primary transition-colors duration-200 relative group"
+                className="text-base font-light tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 relative group"
               >
                 {link.name}
                 <span className="absolute left-0 bottom-[-4px] w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full"></span>
