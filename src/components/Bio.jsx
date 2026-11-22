@@ -45,7 +45,7 @@ export default function Bio() {
               <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden bg-card-bg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/logo-az.svg"
+                  src="/logo-az-avatar.webp"
                   alt="Studio Architettura Zambrano — logo"
                   width="160"
                   height="160"
