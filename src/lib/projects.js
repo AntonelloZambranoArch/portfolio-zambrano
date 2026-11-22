@@ -14,32 +14,107 @@ export const filters = [
   { id: "strutture", name: "Strutture & Tecnica" },
 ];
 
-export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "/portfolio/hero/3.webp", "/portfolio/hero/4.webp", "/portfolio/hero/5.webp"];
+export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "/portfolio/hero/3.webp", "/portfolio/hero/4.webp", "/portfolio/hero/5.webp", "/portfolio/hero/6.webp"];
 
 // Per usare un video slow motion come apertura: metti il file in public/portfolio/hero/
 // (MP4 H.264, 1080p, max ~8 MB) e imposta heroVideo = { src: "/portfolio/hero/coppola.mp4", poster: "/portfolio/hero/1.webp" }.
-export const heroVideo = null;
+export const heroVideo = { src: "/portfolio/hero/slowmotion.mp4", poster: "/portfolio/hero/1.webp" };
 
 export const projects = [
   {
+    "slug": "coppola-capoluogo",
+    "title": "Capoluogo Coppola — Rigenerazione Urbana",
+    "kicker": "Progetto di Rigenerazione Urbana",
+    "category": "urbanistica",
+    "categoryLabel": "Urbanistica",
+    "teaser": "Riqualificazione di un'area industriale dismessa: nuovo polo residenziale di 60 alloggi in classe A4, standard NZEB.",
+    "fullDesc": "Progetto di Rigenerazione Urbana: riqualificazione di un'area industriale dismessa, ai sensi della normativa regionale Campania. L'ex industria conserviera diventa un nuovo polo residenziale di pregio, con cessione al Comune di una zona attrezzata a verde pubblico e parcheggio. 60 alloggi in classe A4, standard NZEB, con consumi ridotti fino a 10 volte.",
+    "captions": [
+      "Inquadramento dell'area di intervento: stato di fatto dell'ex sito industriale, perimetro e posizione strategica.",
+      "Vista aerea e planivolumetria: compattezza dell'impianto, copertura piana e spazi aperti.",
+      "Prospetto principale: scansione delle facciate, pieni e vuoti, balconate ampie.",
+      "Prospettiva d'insieme: integrazione volumetrica, aree esterne e pensilina d'accesso.",
+      "Dettaglio prospettico: il varco di accesso, finiture di pregio e illuminazione.",
+      "Percorsi pedonali e integrazione del verde: piano terra e ingressi ai garage.",
+      "Vista notturna: illuminazione integrata nelle facciate."
+    ],
+    "images": [
+      "/portfolio/coppola-capoluogo/01.webp",
+      "/portfolio/coppola-capoluogo/02.webp",
+      "/portfolio/coppola-capoluogo/03.webp",
+      "/portfolio/coppola-capoluogo/04.webp",
+      "/portfolio/coppola-capoluogo/05.webp",
+      "/portfolio/coppola-capoluogo/06.webp",
+      "/portfolio/coppola-capoluogo/07.webp"
+    ],
+    "sizes": [
+      [
+        1741,
+        1183
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "cover": "/portfolio/coppola-capoluogo/04.webp",
+    "coverSize": [
+      1920,
+      1080
+    ],
+    "num": "01"
+  },
+  {
     "slug": "baronissi-villa-a-schiera",
-    "title": "Villa a Schiera — Baronissi",
+    "title": "Villa Residenziale — Baronissi",
     "kicker": "Residenziale",
     "category": "residenziale",
     "categoryLabel": "Residenziale",
-    "teaser": "Tre viste del progetto: composizione, prospetti e rapporto con lo spazio esterno.",
-    "fullDesc": "Progetto di villa a schiera a Baronissi: composizione volumetrica, prospetti e rapporto con lo spazio esterno, raccontati attraverso tre viste.",
+    "teaser": "Edificio residenziale a Baronissi: volumi a cornice bianca, rivestimento in legno e sistemazioni esterne a verde.",
+    "fullDesc": "Progetto residenziale a Baronissi: volumi bianchi a cornice con balconi aggettanti e parapetti in vetro, rivestimento in doghe di legno, frangisole orizzontali e lotto recintato con autorimessa interrata e sistemazioni esterne a verde.",
     "captions": [
-      "Prospetto frontale: facciata a capanna con rivestimento in lastre chiare, inserti in listelli di legno e mattone faccia a vista, balcone con parapetto in vetro.",
-      "Vista d'angolo: volume compatto a più livelli, ampie finestre a tutta altezza e balconi aggettanti in cemento, con la schiera che si sviluppa sul fronte.",
-      "Corte esterna: pavimentazione carrabile a prato armato, verde perimetrale e recinzione, a definire il rapporto tra le abitazioni e lo spazio di pertinenza."
+      "Prospetto frontale: volumi bianchi a cornice, rivestimento in doghe di legno, frangisole orizzontali e muro di recinzione con illuminazione integrata.",
+      "Vista d'angolo dalla strada: balconi aggettanti con parapetti in vetro, setto in pietra con inserto vetrato e accesso carrabile.",
+      "Vista di spigolo: articolazione dei volumi su più livelli, pensilina in acciaio all'ingresso e recinzione con verde perimetrale.",
+      "Vista aerea: impianto del lotto, copertura piana, autorimessa interrata e sistemazioni esterne a verde.",
+      "Dettaglio dell'ingresso: rivestimento in legno, portafinestra scorrevole, percorso in lastre di pietra e verde ornamentale."
     ],
     "images": [
       "/portfolio/baronissi-villa-a-schiera/01.webp",
       "/portfolio/baronissi-villa-a-schiera/02.webp",
-      "/portfolio/baronissi-villa-a-schiera/03.webp"
+      "/portfolio/baronissi-villa-a-schiera/03.webp",
+      "/portfolio/baronissi-villa-a-schiera/04.webp",
+      "/portfolio/baronissi-villa-a-schiera/05.webp"
     ],
     "sizes": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
       [
         1920,
         1080
@@ -70,11 +145,17 @@ export const projects = [
     "fullDesc": "Set architettonico completo di rendering per il Comune di Fisciano: residenze per studenti universitari, con studio di facciata, presenza urbana, vista aerea e composizione residenziale contemporanea.",
     "captions": [
       "Vista d'insieme: volume a quattro livelli con facciata azzurra e infissi a colori differenziati, parcheggio di pertinenza e copertura piana con terrazza.",
-      "Dettaglio di facciata: rivestimento in lastre chiare, cornici colorate e frangisole orizzontali che scandiscono il prospetto, con pensilina d'ingresso al piano terra."
+      "Dettaglio di facciata: rivestimento in lastre chiare, cornici colorate e frangisole orizzontali che scandiscono il prospetto, con pensilina d'ingresso al piano terra.",
+      "Prospetto sul fronte strada: facciata a capanna con rivestimento in lastre chiare, inserti in listelli di legno e mattone faccia a vista, balcone con parapetto in vetro.",
+      "Vista d'angolo: volume a più livelli con ampie finestre a tutta altezza e balconi aggettanti, affacciato sulla corte.",
+      "Corte esterna: pavimentazione in masselli, siepe perimetrale e recinzione a definire lo spazio di pertinenza."
     ],
     "images": [
       "/portfolio/fisciano-residenze-universitarie/01.webp",
-      "/portfolio/fisciano-residenze-universitarie/02.webp"
+      "/portfolio/fisciano-residenze-universitarie/02.webp",
+      "/portfolio/fisciano-residenze-universitarie/03.webp",
+      "/portfolio/fisciano-residenze-universitarie/04.webp",
+      "/portfolio/fisciano-residenze-universitarie/05.webp"
     ],
     "sizes": [
       [
@@ -84,9 +165,72 @@ export const projects = [
       [
         1080,
         1000
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
       ]
     ],
     "cover": "/portfolio/fisciano-residenze-universitarie/01.webp",
+    "coverSize": [
+      1920,
+      1080
+    ],
+    "num": "02"
+  },
+  {
+    "slug": "caredil-capoluogo",
+    "title": "Capoluogo Caredil — Sostituzione Edilizia",
+    "kicker": "Piano Casa Regione Campania",
+    "category": "residenziale",
+    "categoryLabel": "Residenziale",
+    "teaser": "Demolizione di fabbricati degradati e nuovo edificio residenziale di 9 unità, tre appartamenti per piano.",
+    "fullDesc": "Intervento nel capoluogo di Mercato San Severino, nell'ambito del Piano Casa della Regione Campania: sostituzione edilizia con demolizione di fabbricati degradati e nuovo edificio residenziale di 9 unità, tre appartamenti per piano.",
+    "captions": [
+      "Ortofoto con fotoinserimento: vista zenitale, impronta a terra e integrazione nel tessuto urbano consolidato.",
+      "Prospettiva: estetica contemporanea, vista d'angolo, rigore geometrico dei volumi e ampie balconate.",
+      "Veduta aerea: articolazione dei volumi, disposizione razionale delle unità e copertura piana.",
+      "Prospetto frontale: scansione dei tre livelli e linee orizzontali dei balconi.",
+      "Dettaglio: percorsi e soglie, distribuzione esterna, accesso ai garage e verde integrato."
+    ],
+    "images": [
+      "/portfolio/caredil-capoluogo/01.webp",
+      "/portfolio/caredil-capoluogo/02.webp",
+      "/portfolio/caredil-capoluogo/03.webp",
+      "/portfolio/caredil-capoluogo/04.webp",
+      "/portfolio/caredil-capoluogo/05.webp"
+    ],
+    "sizes": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "cover": "/portfolio/caredil-capoluogo/02.webp",
     "coverSize": [
       1920,
       1080
@@ -548,46 +692,6 @@ export const projects = [
       936
     ],
     "num": "08"
-  },
-  {
-    "slug": "sviluppi-residenziali-urbani",
-    "title": "Sviluppi residenziali urbani",
-    "kicker": "Architettura",
-    "category": "rendering",
-    "categoryLabel": "Architettura · Rendering",
-    "teaser": "Edifici plurifamiliari e sistemi di facciata coordinati.",
-    "fullDesc": "Edifici plurifamiliari e sistemi di facciata coordinati: studi volumetrici e rendering per lo sviluppo residenziale urbano.",
-    "captions": null,
-    "images": [
-      "/portfolio/sviluppi-residenziali-urbani/01.webp",
-      "/portfolio/sviluppi-residenziali-urbani/02.webp",
-      "/portfolio/sviluppi-residenziali-urbani/03.webp",
-      "/portfolio/sviluppi-residenziali-urbani/04.webp"
-    ],
-    "sizes": [
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ]
-    ],
-    "cover": "/portfolio/sviluppi-residenziali-urbani/01.webp",
-    "coverSize": [
-      1920,
-      1080
-    ],
-    "num": "09"
   },
   {
     "slug": "tipologie-residenziali",
