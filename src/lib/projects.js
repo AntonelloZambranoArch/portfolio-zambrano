@@ -18,7 +18,7 @@ export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "
 
 // Per usare un video slow motion come apertura: metti il file in public/portfolio/hero/
 // (MP4 H.264, 1080p, max ~8 MB) e imposta heroVideo = { src: "/portfolio/hero/coppola.mp4", poster: "/portfolio/hero/1.webp" }.
-export const heroVideo = null;
+export const heroVideo = { src: "/portfolio/hero/slowmotion.mp4", poster: "/portfolio/hero/1.webp" };
 
 export const projects = [
   {
