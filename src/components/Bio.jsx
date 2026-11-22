@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Sparkles, ShieldCheck, FileCheck, Landmark } from "lucide-react";
 
 export default function Bio() {
-  const [photoError, setPhotoError] = useState(false);
 
   const stats = [
     { value: "30+", label: "Anni di Esperienza" },
@@ -44,18 +42,15 @@ export default function Bio() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-7 space-y-8">
             <div className="flex flex-col sm:flex-row gap-8 items-start">
-              <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full border border-primary/40 overflow-hidden bg-card-bg flex items-center justify-center">
-                {!photoError ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src="/antonello-zambrano.jpg"
-                    alt="Arch. Antonello Zambrano"
-                    className="w-full h-full object-cover"
-                    onError={() => setPhotoError(true)}
-                  />
-                ) : (
-                  <span className="font-serif text-3xl text-primary/70">AZ</span>
-                )}
+              <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden bg-card-bg">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logo-az.svg"
+                  alt="Studio Architettura Zambrano — logo"
+                  width="160"
+                  height="160"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h2 className="text-sm font-light tracking-wider text-primary uppercase mb-2">
