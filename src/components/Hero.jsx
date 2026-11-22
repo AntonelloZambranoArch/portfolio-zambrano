@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ArrowDown, Briefcase, Award } from "lucide-react";
-import { heroImages } from "@/lib/projects";
+import { heroImages, heroVideo } from "@/lib/projects";
 
 export default function Hero() {
   const images = heroImages;
@@ -12,7 +12,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % images.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [images.length]);
 
@@ -21,19 +21,44 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-28 md:py-0"
     >
-      {images.map((img, idx) => (
-        <div
-          key={img}
-          className={`absolute inset-0 z-0 transition-opacity duration-[2000ms] ease-in-out bg-cover bg-center ${
-            idx === currentIdx ? "opacity-30" : "opacity-0"
-          }`}
-          style={{ backgroundImage: `url('${img}')` }}
+      {heroVideo ? (
+        <video
+          className="absolute inset-0 z-0 h-full w-full object-cover opacity-70"
+          src={heroVideo.src}
+          poster={heroVideo.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
         />
-      ))}
+      ) : (
+        images.map((img, idx) => (
+          <div
+            key={img}
+            className={`absolute inset-0 z-0 overflow-hidden transition-opacity duration-[2200ms] ease-in-out ${
+              idx === currentIdx ? "opacity-70" : "opacity-0"
+            }`}
+          >
+            <div
+              key={idx === currentIdx ? `on-${currentIdx}` : `off-${idx}`}
+              className={`h-full w-full bg-cover bg-center ${idx === currentIdx ? "kenburns" : ""}`}
+              style={{ backgroundImage: `url('${img}')` }}
+            />
+          </div>
+        ))
+      )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/25 z-10" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20 flex flex-col items-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo-az-trasp.webp"
+          alt="Studio Architettura Zambrano"
+          width="160"
+          height="160"
+          className="h-28 w-28 sm:h-36 sm:w-36 mb-4"
+        />
         <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-light bg-primary/10 text-primary border border-primary/30 mb-6 uppercase tracking-wider">
           <Award className="h-3.5 w-3.5" /> Architettura & Interior Design
         </span>

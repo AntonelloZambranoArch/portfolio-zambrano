@@ -35,9 +35,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <a
               href="#home"
-              className="font-serif text-xl sm:text-2xl tracking-wide text-foreground hover:text-primary transition-colors duration-200"
+              className="flex items-center gap-3 font-serif text-xl sm:text-2xl tracking-wide text-foreground hover:text-primary transition-colors duration-200"
             >
-              Arch. <span className="text-primary">Antonello</span> Zambrano
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo-az-trasp.webp" alt="AZ" width="48" height="48" className="h-11 w-11 sm:h-12 sm:w-12" />
+              <span>Arch. <span className="text-primary">Antonello</span> Zambrano</span>
             </a>
           </div>
 

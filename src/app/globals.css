@@ -47,3 +47,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+
+/* Slow motion di apertura (Ken Burns) */
+@keyframes kenburns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to   { transform: scale(1.14) translate3d(-1.5%, -1%, 0); }
+}
+.kenburns { animation: kenburns 14s ease-out forwards; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
