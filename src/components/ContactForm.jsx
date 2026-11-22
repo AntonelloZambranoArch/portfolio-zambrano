@@ -27,15 +27,33 @@ export default function ContactForm() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Messaggio di contatto inviato con successo:", formData);
+      // Invio reale via FormSubmit (richiede una sola attivazione: vedi README).
+      const res = await fetch("https://formsubmit.co/ajax/anto.zambrano@virgilio.it", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `Sito web — ${formData.subject}`,
+          _replyto: formData.email,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === "false") {
+        throw new Error(data.message || "invio non riuscito");
+      }
       setStatus({ submitting: false, submitted: true, error: null });
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (err) {
       setStatus({
         submitting: false,
         submitted: false,
-        error: "Si è verificato un errore durante l'invio del messaggio. Riprova più tardi.",
+        error:
+          "Invio non riuscito. Scrivimi direttamente a anto.zambrano@virgilio.it o chiamami al +39 338 183 5951.",
       });
     }
   };
