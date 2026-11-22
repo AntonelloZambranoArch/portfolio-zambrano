@@ -12,6 +12,8 @@ const CONTAIN_SLUGS = new Set(["studi-di-facciata"]);
 function Tile({ project, index, className, onOpen, remaining }) {
   const contain = CONTAIN_SLUGS.has(project.slug);
   const [w, h] = project.sizes[index];
+  const cap = project.captions?.[index];
+  const label = cap ? cap.split(". ")[0].replace(/\.$/, "") : null;
   return (
     <button
       type="button"
@@ -32,6 +34,11 @@ function Tile({ project, index, className, onOpen, remaining }) {
         }`}
       />
       <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-foreground/10 group-hover:ring-primary/60 transition" />
+      {label && remaining === 0 && (
+        <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent px-3 pb-2 pt-8 text-[11px] leading-snug text-[#f4ede1] md:text-xs">
+          <span className="line-clamp-2">{label}</span>
+        </span>
+      )}
       {remaining > 0 && (
         <span className="absolute inset-0 flex items-center justify-center bg-background/70 font-serif text-3xl text-primary">
           +{remaining}

@@ -86,18 +86,18 @@ export const projects = [
   },
   {
     "slug": "baronissi-villa-a-schiera",
-    "title": "Villa Residenziale — Baronissi",
+    "title": "Villa a Schiera Bifamiliare — Baronissi",
     "kicker": "Residenziale",
     "category": "residenziale",
     "categoryLabel": "Residenziale",
-    "teaser": "Edificio residenziale a Baronissi: volumi a cornice bianca, rivestimento in legno e sistemazioni esterne a verde.",
-    "fullDesc": "Progetto residenziale a Baronissi: volumi bianchi a cornice con balconi aggettanti e parapetti in vetro, rivestimento in doghe di legno, frangisole orizzontali e lotto recintato con autorimessa interrata e sistemazioni esterne a verde.",
+    "teaser": "Demolizione di un fabbricato esistente e nuova villa a schiera bifamiliare dal linguaggio contemporaneo.",
+    "fullDesc": "Progetto residenziale a Baronissi (SA): demolizione di un fabbricato esistente e costruzione di una villa a schiera bifamiliare, caratterizzata da un linguaggio architettonico contemporaneo.",
     "captions": [
-      "Prospetto frontale: volumi bianchi a cornice, rivestimento in doghe di legno, frangisole orizzontali e muro di recinzione con illuminazione integrata.",
-      "Vista d'angolo dalla strada: balconi aggettanti con parapetti in vetro, setto in pietra con inserto vetrato e accesso carrabile.",
+      "Prospetto principale: rappresentazione frontale della villa per due alloggi, con la simmetria dei volumi aggettanti dei balconi e il rivestimento in doghe effetto legno.",
+      "Inserimento stradale: vista d'insieme dalla strada che enfatizza la recinzione perimetrale in pietra e il design moderno delle facciate bifamiliari.",
       "Vista di spigolo: articolazione dei volumi su più livelli, pensilina in acciaio all'ingresso e recinzione con verde perimetrale.",
-      "Vista aerea: impianto del lotto, copertura piana, autorimessa interrata e sistemazioni esterne a verde.",
-      "Dettaglio dell'ingresso: rivestimento in legno, portafinestra scorrevole, percorso in lastre di pietra e verde ornamentale."
+      "Vista zenitale (drone): inserimento nel lotto, distribuzione degli spazi esterni, rampa di accesso al piano interrato e pensilina ombreggiante.",
+      "Dettaglio prospettico: focus sul piano terra, con integrazione tra il rivestimento in doghe effetto legno e i serramenti a tutta altezza."
     ],
     "images": [
       "/portfolio/baronissi-villa-a-schiera/01.webp",
@@ -255,7 +255,7 @@ export const projects = [
       "Residenza: estetica organica. Progetto caratterizzato da volumi plastici che si snodano nel lotto, creando un'architettura organica capace di fondersi con l'ambiente circostante.",
       "Edificio residenziale: trasparenza e aggetti. Struttura definita da ampie balconate aggettanti che scandiscono il prospetto, conferendo leggerezza e favorendo l'integrazione tra interno ed esterno.",
       "Villa bifamiliare: armonia residenziale. Abitazione definita da volumi compatti e rifiniti con cura, che si inserisce nel contesto della lottizzazione garantendo privacy e comfort abitativo.",
-      "Veduta del progetto."
+      "Villa unifamiliare: porticato ad archi. Abitazione con loggia a tre archi al piano terra e copertura a falde, inserita nel lotto con recinzione piena."
     ],
     "images": [
       "/portfolio/san-vincenzo/01.webp",
@@ -337,7 +337,7 @@ export const projects = [
       "Residenza unifamiliare: coerenza compositiva. Progetto residenziale che si distingue per il rigore dei volumi e una finitura curata, armonizzandosi con l'impianto della lottizzazione.",
       "Villa unifamiliare: articolazione materica. Abitazione che esplora il contrasto materico nei prospetti, definendo una volumetria riconoscibile ed equilibrata.",
       "Residenza unifamiliare: dialogo con il sito. Edificio residenziale progettato per integrare i volumi nel lotto di pertinenza, con un'attenzione particolare alle finiture esterne.",
-      "Residenza unifamiliare: chiusura del comparto. Elemento architettonico conclusivo della lottizzazione, caratterizzato da un'impostazione formale che completa il profilo urbano dell'area."
+      "Residenza unifamiliare: struttura in corso di realizzazione. Edificio a più livelli con struttura portante completata, in attesa delle finiture, a chiusura del comparto."
     ],
     "images": [
       "/portfolio/torello/01.webp",
@@ -414,27 +414,27 @@ export const projects = [
     "teaser": "30 lotti residenziali con urbanizzazione primaria e secondaria: dal singolo edificio all'ambiente completo.",
     "fullDesc": "Lottizzazione convenzionata nella frazione Acigliano di Mercato San Severino: 30 lotti residenziali con urbanizzazione primaria e secondaria. Progettazione architettonica e strutturale, strade, reti e illuminazione pubblica, spazi pubblici e collettivi, direzione lavori e consegna, accatastamento, studio termico e pratiche per l'agibilità. Un quadro pianificatorio completo che dimostra il coordinamento tra sito, edifici e infrastrutture.",
     "captions": [
-      "Ortofoto dell'area di intervento con perimetrazione della lottizzazione.",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      "Lottizzazione convenzionata C/3, Acigliano: masterplan e infrastrutture. L'ortofoto illustra l'assetto morfologico della lottizzazione, caratterizzata da una trama insediativa ordinata e coerente con il contesto paesaggistico circostante, con maglia viaria interna di collegamento tra le unità unifamiliari e plurifamiliari.",
+      "Residenza unifamiliare: sintesi volumetrica. Composizione architettonica caratterizzata dall'integrazione tra un corpo basamentale rivestito in ceramica e una geometria superiore curva, che modula la plasticità della struttura nel contesto residenziale.",
+      "Villa unifamiliare: contrasti materici. Progetto residenziale basato sul contrasto tra il rivestimento chiaro dei volumi geometrici e la volumetria curva del coronamento, definendo un linguaggio moderno e armonico.",
+      "Residenza bifamiliare: geometria e trasparenze. Edificio caratterizzato da una volumetria curva al piano superiore e da un ampio sistema di aperture, progettato per massimizzare il comfort visivo e l'integrazione con lo spazio esterno.",
+      "Villa quadrifamiliare: articolazione dei prospetti. Intervento residenziale contraddistinto da una composizione dei volumi complessa, con terrazzamenti aggettanti e un uso sapiente dei pieni e dei vuoti che definisce l'identità dell'edificio.",
+      "Villa unifamiliare: plasticità volumetrica. Residenza definita da linee curve continue che conferiscono dinamismo alla facciata, con un'articolazione dei volumi studiata per ottimizzare l'esposizione e il rapporto con il lotto di pertinenza.",
+      "Residenza unifamiliare: equilibrio formale. Struttura residenziale caratterizzata da un'impostazione formale classica rivisitata, con un gioco di coperture a falde e volumi aggettanti che definiscono uno spazio domestico accogliente ed equilibrato.",
+      "Residenza unifamiliare: integrazione paesaggistica. Abitazione caratterizzata da uno sviluppo orizzontale e da un linguaggio architettonico che integra elementi tradizionali a falde con ampie superfici vetrate, garantendo continuità tra interno ed esterno.",
+      "Residenza unifamiliare: design contemporaneo. Fabbricato caratterizzato da un'impostazione geometrica netta e dall'impiego di ampie vetrate, progettato per enfatizzare la luminosità degli spazi abitativi interni e la leggerezza volumetrica.",
+      "Villa unifamiliare: integrazione funzionale. Progetto residenziale che coniuga un impianto planimetrico funzionale con un'estetica ricercata, caratterizzato da finiture di pregio e da un'attenta cura nel rapporto con il lotto di pertinenza.",
+      "Residenza unifamiliare: linguaggio tradizionale. Edificio caratterizzato da un impianto classico con tetto a falde, impreziosito da decorazioni in facciata e da un sistema di recinzione in pietra che ne definisce il perimetro.",
+      "Villa unifamiliare: volumi dinamici. Edificio residenziale connotato dalla sovrapposizione di volumi distinti e dall'uso di una palette cromatica calda, con un'articolazione delle facciate che crea ritmi e profondità variabili.",
+      "Residenza bifamiliare: volume curvo in sommità. Edificio con coronamento a pianta curva, ingresso con elementi in pietra e prospetti dalla cromia calda.",
+      "Residenza in ristrutturazione: cantiere. Fabbricato in fase di riqualificazione, caratterizzato da un'impalcatura che avvolge la struttura, evidenziando l'intervento di recupero dei volumi e dei prospetti esistenti.",
+      "Villa unifamiliare: porticati e archi. Abitazione definita da un sistema di ampi archi a tutto sesto che creano una loggia vivibile, conferendo eleganza e continuità spaziale tra l'interno e il giardino.",
+      "Residenza in ristrutturazione: volumi. Immobile in fase di cantiere, caratterizzato da uno scheletro strutturale che rivela una volumetria definita, pronta per la definizione delle finiture architettoniche.",
+      "Residenza plurifamiliare: rigore compositivo. Struttura residenziale caratterizzata da una chiara scansione volumetrica, con balconate aggettanti che definiscono l'estetica dei prospetti e ottimizzano la fruizione degli spazi aperti.",
+      "Villa unifamiliare: spazi aperti. Abitazione connotata da aggetti pronunciati e da finiture in laterizio a vista nei pilastri, che creano un gioco di ombre e volumi architettonici di carattere moderno.",
+      "Edificio residenziale a schiera bifamiliare: dinamismo plastico. Struttura caratterizzata da ampi volumi aggettanti, con un elemento curvo distintivo che dinamizza la facciata e definisce un linguaggio architettonico contemporaneo.",
+      "Villa a schiera trifamiliare: composizione materica. Progetto residenziale che integra un elemento cilindrico in pietra con volumi geometrici regolari, creando un contrasto materico distintivo che valorizza l'ingresso e la facciata.",
+      "Villa a schiera bifamiliare: dettagli costruttivi. Fronte a schiera con aggetti pronunciati e finiture in laterizio a vista, che definiscono l'ingombro dei volumi lungo la strada."
     ],
     "images": [
       "/portfolio/acigliano/01.webp",
@@ -566,7 +566,7 @@ export const projects = [
       "Edificio a corte: sviluppo semicircolare. Struttura a pianta semicircolare dotata di tre corpi scala, capace di accogliere 24 unità abitative in un'architettura armoniosa e protetta.",
       "Edificio residenziale: continuità volumetrica. Dettaglio del complesso principale che enfatizza la continuità dei prospetti e la qualità degli spazi comuni esterni.",
       "Complesso a schiera: 5 villette. Edificio residenziale a schiera composto da 5 unità abitative, progettato per garantire indipendenza e comfort nel contesto della riqualificazione.",
-      "Edificio misto: integrazione commerciale. Fronti residenziali a schiera composti da 5 villette indipendenti; una soluzione progettuale che coniuga privacy e coesione architettonica in un contesto di rigenerazione urbana."
+      "Edificio residenziale: volumi curvi e terrazzi. Fronte con balcone semicircolare in aggetto e volumi sfalsati, in dialogo con il complesso semicircolare."
     ],
     "images": [
       "/portfolio/residenza-lombardi/01.webp",
