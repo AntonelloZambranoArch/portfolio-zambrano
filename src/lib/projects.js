@@ -18,6 +18,45 @@ export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "
 
 export const projects = [
   {
+    "slug": "baronissi-villa-a-schiera",
+    "title": "Villa a Schiera — Baronissi",
+    "kicker": "Residenziale",
+    "category": "residenziale",
+    "categoryLabel": "Residenziale",
+    "teaser": "Tre viste del progetto: composizione, prospetti e rapporto con lo spazio esterno.",
+    "fullDesc": "Progetto di villa a schiera a Baronissi: composizione volumetrica, prospetti e rapporto con lo spazio esterno, raccontati attraverso tre viste.",
+    "captions": [
+      "Prospetto frontale: facciata a capanna con rivestimento in lastre chiare, inserti in listelli di legno e mattone faccia a vista, balcone con parapetto in vetro.",
+      "Vista d'angolo: volume compatto a più livelli, ampie finestre a tutta altezza e balconi aggettanti in cemento, con la schiera che si sviluppa sul fronte.",
+      "Corte esterna: pavimentazione carrabile a prato armato, verde perimetrale e recinzione, a definire il rapporto tra le abitazioni e lo spazio di pertinenza."
+    ],
+    "images": [
+      "/portfolio/baronissi-villa-a-schiera/01.webp",
+      "/portfolio/baronissi-villa-a-schiera/02.webp",
+      "/portfolio/baronissi-villa-a-schiera/03.webp"
+    ],
+    "sizes": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "cover": "/portfolio/baronissi-villa-a-schiera/01.webp",
+    "coverSize": [
+      1920,
+      1080
+    ],
+    "num": "01"
+  },
+  {
     "slug": "fisciano-residenze-universitarie",
     "title": "Residenze per Studenti Universitari — Fisciano",
     "kicker": "Progetto in evidenza",
@@ -25,7 +64,10 @@ export const projects = [
     "categoryLabel": "Residenziale",
     "teaser": "Facciata, presenza urbana, vista aerea e composizione architettonica contemporanea.",
     "fullDesc": "Set architettonico completo di rendering per il Comune di Fisciano: residenze per studenti universitari, con studio di facciata, presenza urbana, vista aerea e composizione residenziale contemporanea.",
-    "captions": null,
+    "captions": [
+      "Vista d'insieme: volume a quattro livelli con facciata azzurra e infissi a colori differenziati, parcheggio di pertinenza e copertura piana con terrazza.",
+      "Dettaglio di facciata: rivestimento in lastre chiare, cornici colorate e frangisole orizzontali che scandiscono il prospetto, con pensilina d'ingresso al piano terra."
+    ],
     "images": [
       "/portfolio/fisciano-residenze-universitarie/01.webp",
       "/portfolio/fisciano-residenze-universitarie/02.webp"
@@ -44,153 +86,6 @@ export const projects = [
     "coverSize": [
       1920,
       1080
-    ],
-    "num": "01"
-  },
-  {
-    "slug": "acigliano",
-    "title": "Lottizzazione C/3 — Acigliano",
-    "kicker": "Masterplanning e coordinamento complesso",
-    "category": "urbanistica",
-    "categoryLabel": "Residenziale & Urbanistica",
-    "teaser": "30 lotti residenziali con urbanizzazione primaria e secondaria: dal singolo edificio all'ambiente completo.",
-    "fullDesc": "Lottizzazione convenzionata nella frazione Acigliano di Mercato San Severino: 30 lotti residenziali con urbanizzazione primaria e secondaria. Progettazione architettonica e strutturale, strade, reti e illuminazione pubblica, spazi pubblici e collettivi, direzione lavori e consegna, accatastamento, studio termico e pratiche per l'agibilità. Un quadro pianificatorio completo che dimostra il coordinamento tra sito, edifici e infrastrutture.",
-    "captions": [
-      "Ortofoto dell'area di intervento con perimetrazione della lottizzazione.",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "images": [
-      "/portfolio/acigliano/01.webp",
-      "/portfolio/acigliano/02.webp",
-      "/portfolio/acigliano/03.webp",
-      "/portfolio/acigliano/04.webp",
-      "/portfolio/acigliano/05.webp",
-      "/portfolio/acigliano/06.webp",
-      "/portfolio/acigliano/07.webp",
-      "/portfolio/acigliano/08.webp",
-      "/portfolio/acigliano/09.webp",
-      "/portfolio/acigliano/10.webp",
-      "/portfolio/acigliano/11.webp",
-      "/portfolio/acigliano/12.webp",
-      "/portfolio/acigliano/13.webp",
-      "/portfolio/acigliano/14.webp",
-      "/portfolio/acigliano/15.webp",
-      "/portfolio/acigliano/16.webp",
-      "/portfolio/acigliano/17.webp",
-      "/portfolio/acigliano/18.webp",
-      "/portfolio/acigliano/19.webp",
-      "/portfolio/acigliano/20.webp",
-      "/portfolio/acigliano/21.webp"
-    ],
-    "sizes": [
-      [
-        693,
-        919
-      ],
-      [
-        1526,
-        933
-      ],
-      [
-        1566,
-        953
-      ],
-      [
-        1534,
-        950
-      ],
-      [
-        1530,
-        890
-      ],
-      [
-        1156,
-        924
-      ],
-      [
-        1700,
-        939
-      ],
-      [
-        1158,
-        843
-      ],
-      [
-        1040,
-        949
-      ],
-      [
-        1477,
-        894
-      ],
-      [
-        1491,
-        954
-      ],
-      [
-        1210,
-        920
-      ],
-      [
-        1508,
-        930
-      ],
-      [
-        1227,
-        922
-      ],
-      [
-        1415,
-        938
-      ],
-      [
-        1341,
-        928
-      ],
-      [
-        1372,
-        939
-      ],
-      [
-        1549,
-        931
-      ],
-      [
-        1328,
-        885
-      ],
-      [
-        1284,
-        943
-      ],
-      [
-        1233,
-        653
-      ]
-    ],
-    "cover": "/portfolio/acigliano/01.webp",
-    "coverSize": [
-      693,
-      919
     ],
     "num": "02"
   },
@@ -363,37 +258,149 @@ export const projects = [
     "num": "04"
   },
   {
-    "slug": "baronissi-villa-a-schiera",
-    "title": "Villa a Schiera — Baronissi",
-    "kicker": "Residenziale",
-    "category": "residenziale",
-    "categoryLabel": "Residenziale",
-    "teaser": "Tre viste del progetto: composizione, prospetti e rapporto con lo spazio esterno.",
-    "fullDesc": "Progetto di villa a schiera a Baronissi: composizione volumetrica, prospetti e rapporto con lo spazio esterno, raccontati attraverso tre viste.",
-    "captions": null,
+    "slug": "acigliano",
+    "title": "Lottizzazione C/3 — Acigliano",
+    "kicker": "Masterplanning e coordinamento complesso",
+    "category": "urbanistica",
+    "categoryLabel": "Residenziale & Urbanistica",
+    "teaser": "30 lotti residenziali con urbanizzazione primaria e secondaria: dal singolo edificio all'ambiente completo.",
+    "fullDesc": "Lottizzazione convenzionata nella frazione Acigliano di Mercato San Severino: 30 lotti residenziali con urbanizzazione primaria e secondaria. Progettazione architettonica e strutturale, strade, reti e illuminazione pubblica, spazi pubblici e collettivi, direzione lavori e consegna, accatastamento, studio termico e pratiche per l'agibilità. Un quadro pianificatorio completo che dimostra il coordinamento tra sito, edifici e infrastrutture.",
+    "captions": [
+      "Ortofoto dell'area di intervento con perimetrazione della lottizzazione.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
     "images": [
-      "/portfolio/baronissi-villa-a-schiera/01.webp",
-      "/portfolio/baronissi-villa-a-schiera/02.webp",
-      "/portfolio/baronissi-villa-a-schiera/03.webp"
+      "/portfolio/acigliano/01.webp",
+      "/portfolio/acigliano/02.webp",
+      "/portfolio/acigliano/03.webp",
+      "/portfolio/acigliano/04.webp",
+      "/portfolio/acigliano/05.webp",
+      "/portfolio/acigliano/06.webp",
+      "/portfolio/acigliano/07.webp",
+      "/portfolio/acigliano/08.webp",
+      "/portfolio/acigliano/09.webp",
+      "/portfolio/acigliano/10.webp",
+      "/portfolio/acigliano/11.webp",
+      "/portfolio/acigliano/12.webp",
+      "/portfolio/acigliano/13.webp",
+      "/portfolio/acigliano/14.webp",
+      "/portfolio/acigliano/15.webp",
+      "/portfolio/acigliano/16.webp",
+      "/portfolio/acigliano/17.webp",
+      "/portfolio/acigliano/18.webp",
+      "/portfolio/acigliano/19.webp",
+      "/portfolio/acigliano/20.webp",
+      "/portfolio/acigliano/21.webp"
     ],
     "sizes": [
       [
-        1920,
-        1080
+        693,
+        919
       ],
       [
-        1920,
-        1080
+        1526,
+        933
       ],
       [
-        1920,
-        1080
+        1566,
+        953
+      ],
+      [
+        1534,
+        950
+      ],
+      [
+        1530,
+        890
+      ],
+      [
+        1156,
+        924
+      ],
+      [
+        1700,
+        939
+      ],
+      [
+        1158,
+        843
+      ],
+      [
+        1040,
+        949
+      ],
+      [
+        1477,
+        894
+      ],
+      [
+        1491,
+        954
+      ],
+      [
+        1210,
+        920
+      ],
+      [
+        1508,
+        930
+      ],
+      [
+        1227,
+        922
+      ],
+      [
+        1415,
+        938
+      ],
+      [
+        1341,
+        928
+      ],
+      [
+        1372,
+        939
+      ],
+      [
+        1549,
+        931
+      ],
+      [
+        1328,
+        885
+      ],
+      [
+        1284,
+        943
+      ],
+      [
+        1233,
+        653
       ]
     ],
-    "cover": "/portfolio/baronissi-villa-a-schiera/01.webp",
+    "cover": "/portfolio/acigliano/01.webp",
     "coverSize": [
-      1920,
-      1080
+      693,
+      919
     ],
     "num": "05"
   },
