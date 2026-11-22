@@ -14,7 +14,7 @@ export const filters = [
   { id: "strutture", name: "Strutture & Tecnica" },
 ];
 
-export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "/portfolio/hero/3.webp"];
+export const heroImages = ["/portfolio/hero/1.webp", "/portfolio/hero/2.webp", "/portfolio/hero/3.webp", "/portfolio/hero/4.webp", "/portfolio/hero/5.webp"];
 
 // Per usare un video slow motion come apertura: metti il file in public/portfolio/hero/
 // (MP4 H.264, 1080p, max ~8 MB) e imposta heroVideo = { src: "/portfolio/hero/coppola.mp4", poster: "/portfolio/hero/1.webp" }.
