@@ -31,7 +31,7 @@ function Tile({ project, index, className, onOpen, remaining }) {
           contain ? "object-contain p-2" : "object-cover"
         }`}
       />
-      <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-foreground/10 group-hover:ring-primary/50 transition" />
+      <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-foreground/10 group-hover:ring-primary/60 transition" />
       {remaining > 0 && (
         <span className="absolute inset-0 flex items-center justify-center bg-background/70 font-serif text-3xl text-primary">
           +{remaining}
@@ -105,25 +105,26 @@ export default function Gallery() {
     }));
 
   return (
-    <section id="galleria" className="bg-background py-24">
+    <section id="galleria" className="theme-ivory py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center">
-          <h2 className="text-sm font-light uppercase tracking-[0.3em] text-primary">Portfolio</h2>
-          <h3 className="mt-3 font-serif text-4xl font-medium text-foreground sm:text-5xl">
+        <div className="mb-12 grid gap-6 md:grid-cols-12 md:items-end">
+          <h2 className="font-serif text-5xl font-light leading-none text-foreground sm:text-7xl md:col-span-7">
             Lavori selezionati
-          </h3>
-          <div className="mx-auto mt-6 h-px w-24 bg-primary/60" />
+          </h2>
+          <p className="max-w-md text-lg leading-relaxed text-foreground/65 md:col-span-5">
+            Lottizzazioni, residenze, rigenerazione urbana, interni e strutture: una selezione di trent'anni di progetti.
+          </p>
         </div>
 
-        <div className="mb-16 flex flex-wrap justify-center gap-2 sm:gap-3">
+        <div className="mb-20 flex flex-wrap gap-x-8 gap-y-3 border-y border-foreground/15 py-4">
           {filters.map((f) => (
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={`border px-4 py-2 text-xs font-light uppercase tracking-widest transition sm:px-5 ${
+              className={`border-b pb-1 text-base tracking-wide transition ${
                 activeFilter === f.id
-                  ? "border-primary bg-primary text-background"
-                  : "border-foreground/15 text-foreground/60 hover:border-primary/60 hover:text-primary"
+                  ? "border-primary text-primary"
+                  : "border-transparent text-foreground/55 hover:text-foreground"
               }`}
             >
               {f.name}
@@ -131,27 +132,24 @@ export default function Gallery() {
           ))}
         </div>
 
-        <div className="space-y-24 sm:space-y-32">
+        <div className="space-y-28 sm:space-y-40">
           {visible.map((p) => (
             <article key={p.slug} id={p.slug} className="scroll-mt-24">
               <header className="mb-8 grid items-end gap-4 md:grid-cols-12">
                 <div className="md:col-span-7">
-                  <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                    <span className="mr-3 font-serif text-base tracking-normal text-primary/70">{p.num}</span>
-                    {p.kicker}
-                  </p>
-                  <h4 className="mt-3 font-serif text-3xl font-medium leading-tight text-foreground sm:text-4xl">
+                  <p className="font-serif text-xl italic text-primary">{p.kicker}</p>
+                  <h4 className="mt-2 font-serif text-4xl font-light leading-[1.05] text-foreground sm:text-6xl">
                     {p.title}
                   </h4>
                 </div>
-                <p className="text-base font-light leading-relaxed text-foreground/60 md:col-span-5">
+                <p className="text-lg font-light leading-relaxed text-foreground/65 md:col-span-5">
                   {p.teaser}
                 </p>
               </header>
 
               <Mosaic project={p} onOpen={(index) => setLightbox({ slug: p.slug, index })} />
 
-              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-light tracking-wide">
+              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-base font-light tracking-wide">
                 <button
                   type="button"
                   onClick={() => setLightbox({ slug: p.slug, index: 0 })}

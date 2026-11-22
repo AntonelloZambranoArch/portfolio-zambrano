@@ -59,15 +59,14 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contatti" className="py-24 bg-background border-t border-foreground/10 relative">
+    <section id="contatti" className="py-28 sm:py-36 bg-background relative">
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-light tracking-wider text-primary uppercase mb-2">Contatti</h2>
-          <h3 className="font-serif text-3xl sm:text-4xl font-medium text-foreground">Avvia una Collaborazione</h3>
-          <p className="max-w-xl mx-auto mt-4 text-base text-foreground/50 font-light">
+        <div className="mb-16 max-w-3xl">
+          <h2 className="font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl">Parliamo del tuo progetto.</h2>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/65 font-light">
             Hai un progetto da realizzare, un cantiere da coordinare o hai bisogno di una consulenza tecnica? Inviami un messaggio o usa i recapiti diretti.
           </p>
         </div>
@@ -75,7 +74,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           <div className="lg:col-span-5 space-y-8">
-            <h4 className="font-serif text-xl text-foreground mb-6 border-b border-foreground/10 pb-3">Recapiti Diretti</h4>
+            <h4 className="font-serif text-3xl font-light text-foreground mb-6 border-b border-foreground/10 pb-3">Recapiti</h4>
 
             <div className="space-y-6">
               <div className="flex gap-4 p-5 border border-foreground/10">
@@ -157,7 +156,7 @@ export default function ContactForm() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col">
-                    <label htmlFor="name" className="text-xs font-light text-foreground/50 uppercase tracking-wider mb-2">
+                    <label htmlFor="name" className="text-sm font-light text-foreground/60 tracking-wide mb-2">
                       Nome Completo *
                     </label>
                     <input
@@ -173,7 +172,7 @@ export default function ContactForm() {
                   </div>
 
                   <div className="flex flex-col">
-                    <label htmlFor="email" className="text-xs font-light text-foreground/50 uppercase tracking-wider mb-2">
+                    <label htmlFor="email" className="text-sm font-light text-foreground/60 tracking-wide mb-2">
                       Indirizzo E-mail *
                     </label>
                     <input
@@ -190,7 +189,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="flex flex-col">
-                  <label htmlFor="subject" className="text-xs font-light text-foreground/50 uppercase tracking-wider mb-2">
+                  <label htmlFor="subject" className="text-sm font-light text-foreground/60 tracking-wide mb-2">
                     Oggetto *
                   </label>
                   <input
@@ -206,7 +205,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="flex flex-col">
-                  <label htmlFor="message" className="text-xs font-light text-foreground/50 uppercase tracking-wider mb-2">
+                  <label htmlFor="message" className="text-sm font-light text-foreground/60 tracking-wide mb-2">
                     Messaggio *
                   </label>
                   <textarea

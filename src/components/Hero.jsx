@@ -1,76 +1,86 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowDown, Briefcase, Award } from "lucide-react";
-import { heroImages } from "@/lib/projects";
+import { heroImages, heroVideo } from "@/lib/projects";
 
 export default function Hero() {
   const images = heroImages;
-
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % images.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [images.length]);
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-28 md:py-0"
-    >
-      {images.map((img, idx) => (
-        <div
-          key={img}
-          className={`absolute inset-0 z-0 transition-opacity duration-[2000ms] ease-in-out bg-cover bg-center ${
-            idx === currentIdx ? "opacity-30" : "opacity-0"
-          }`}
-          style={{ backgroundImage: `url('${img}')` }}
+    <section id="home" className="relative flex min-h-[100svh] w-full items-end overflow-hidden">
+      {heroVideo ? (
+        <video
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+          src={heroVideo.src}
+          poster={heroVideo.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
         />
-      ))}
+      ) : (
+        images.map((img, idx) => (
+          <div
+            key={img}
+            className={`absolute inset-0 z-0 overflow-hidden transition-opacity duration-[2400ms] ease-in-out ${
+              idx === currentIdx ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div
+              key={idx === currentIdx ? `on-${currentIdx}` : `off-${idx}`}
+              className={`h-full w-full bg-cover bg-center ${idx === currentIdx ? "kenburns" : ""}`}
+              style={{ backgroundImage: `url('${img}')` }}
+            />
+          </div>
+        ))
+      )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50 z-10" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/40 to-background/30" />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20 flex flex-col items-center">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-light bg-primary/10 text-primary border border-primary/30 mb-6 uppercase tracking-wider">
-          <Award className="h-3.5 w-3.5" /> Architettura & Interior Design
-        </span>
+      {/* Linee di costruzione, come nel logo */}
+      <div className="pointer-events-none absolute inset-y-0 left-[7%] z-10 hidden w-px bg-primary/30 md:block" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-[22%] z-10 hidden h-px bg-primary/20 md:block" />
 
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight text-foreground mb-6">
-          <span className="block">Arch. Antonello Zambrano</span>
-          <span className="block text-xl sm:text-2xl md:text-3xl text-primary font-sans font-light tracking-wide mt-3">
-            Progettazione e Direzione Lavori dal 1996
-          </span>
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 sm:px-10 md:pb-28">
+        <h1 className="rise max-w-4xl font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl md:text-8xl">
+          Spazi su misura, dal primo schizzo al cantiere.
         </h1>
 
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl text-foreground/60 font-light mb-10 leading-relaxed">
-          Trent'anni di esperienza nella progettazione di spazi su misura e nella gestione integrale di cantieri e strutture complesse. Estetica, rigore tecnico e precisione formale al servizio del territorio.
+        <p className="rise rise-2 mt-8 max-w-xl text-lg leading-relaxed text-foreground/75 sm:text-xl">
+          Arch. Antonello Zambrano, architetto dal 1996. Progettazione, interior design, strutture e direzione lavori.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-4 md:mb-16">
+        <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-x-10 gap-y-5">
           <a
             href="#galleria"
-            className="inline-flex items-center justify-center px-8 py-3 border border-primary/60 text-base font-light tracking-wide text-primary hover:bg-primary hover:text-background transition-all duration-300"
+            className="bg-primary px-9 py-4 text-base font-normal tracking-wide text-background transition hover:bg-accent"
           >
-            <Briefcase className="mr-2 h-4 w-4" /> Esplora i Progetti
+            Vedi i progetti
           </a>
           <a
             href="#contatti"
-            className="inline-flex items-center justify-center px-8 py-3 border border-foreground/20 text-base font-light tracking-wide text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+            className="border-b border-primary/60 pb-1 text-base font-light tracking-wide text-foreground transition hover:border-primary hover:text-primary"
           >
-            Contattami
+            Scrivimi
           </a>
         </div>
 
-        <a
-          href="#bio"
-          className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 transform flex-col items-center text-foreground/40 transition-colors duration-300 hover:text-primary group md:flex"
-        >
-          <span className="text-xs tracking-widest uppercase mb-2 font-light">Scopri di più</span>
-          <ArrowDown className="h-5 w-5 animate-bounce group-hover:text-primary" />
-        </a>
+        <div className="absolute bottom-8 right-6 hidden items-center gap-2 sm:right-10 md:flex" aria-hidden="true">
+          {images.map((_, i) => (
+            <span
+              key={i}
+              className={`h-px transition-all duration-700 ${i === currentIdx ? "w-10 bg-primary" : "w-5 bg-foreground/30"}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
