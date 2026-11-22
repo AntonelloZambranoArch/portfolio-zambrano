@@ -1,91 +1,142 @@
 "use client";
 
-import { useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from "lucide-react";
 
-export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext, onSelectIndex }) {
-  
-  // Handle keyboard navigation
+export default function Lightbox({
+  images,
+  captions,
+  title,
+  currentIndex,
+  onClose,
+  onPrev,
+  onNext,
+  onSelectIndex = () => {},
+}) {
+  const [zoom, setZoom] = useState(false);
+  const touchX = useRef(null);
+  const thumbs = useRef(null);
+
+  // Torna alla vista intera ad ogni cambio immagine.
+  useEffect(() => setZoom(false), [currentIndex]);
+
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const onKey = (e) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") onPrev();
       if (e.key === "ArrowRight") onNext();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    // Prevent body scroll when open
+    window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
-    
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
   }, [onClose, onPrev, onNext]);
 
+  // Tiene visibile la miniatura attiva.
+  useEffect(() => {
+    const el = thumbs.current?.children[currentIndex];
+    el?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }, [currentIndex]);
+
+  const onTouchStart = (e) => (touchX.current = e.touches[0].clientX);
+  const onTouchEnd = useCallback(
+    (e) => {
+      if (touchX.current === null || zoom) return;
+      const dx = e.changedTouches[0].clientX - touchX.current;
+      touchX.current = null;
+      if (Math.abs(dx) > 60) (dx > 0 ? onPrev : onNext)();
+    },
+    [zoom, onPrev, onNext]
+  );
+
   if (!images || images.length === 0) return null;
+  const caption = captions?.[currentIndex];
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col justify-between bg-black/95 backdrop-blur-sm p-4">
-      {/* Top Header Bar */}
-      <div className="flex items-center justify-between text-white py-2 px-4 z-10">
-        <span className="text-sm font-medium tracking-wider bg-gray-900/60 px-3 py-1 rounded-full border border-gray-800/40">
-          {currentIndex + 1} / {images.length}
-        </span>
-        <button
-          onClick={onClose}
-          className="p-2 rounded-full bg-gray-900/60 hover:bg-primary/20 text-white hover:text-primary transition-all border border-gray-800/40 hover:border-primary/30"
-          aria-label="Chiudi visualizzatore"
-        >
-          <X className="h-6 w-6" />
-        </button>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="relative flex-grow flex items-center justify-center max-h-[75vh]">
-        {/* Previous Button */}
-        <button
-          onClick={onPrev}
-          className="absolute left-2 sm:left-6 p-3 rounded-full bg-gray-900/60 hover:bg-primary/20 text-white hover:text-primary transition-all border border-gray-800/40 hover:border-primary/30 z-10"
-          aria-label="Immagine precedente"
-        >
-          <ChevronLeft className="h-7 w-7" />
-        </button>
-
-        {/* Current Image */}
-        <div className="relative max-w-full max-h-full flex items-center justify-center p-2 select-none">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={images[currentIndex]}
-            alt={`Progetto immagine ${currentIndex + 1}`}
-            className="object-contain max-w-full max-h-[70vh] rounded-lg shadow-2xl transition-transform duration-300"
-          />
+    <div className="fixed inset-0 z-50 flex flex-col bg-black/95 text-white backdrop-blur-sm" role="dialog" aria-modal="true">
+      <div className="flex items-center justify-between gap-4 px-4 py-3">
+        <div className="min-w-0">
+          <p className="truncate font-serif text-base text-foreground/90">{title}</p>
+          <p className="text-xs tracking-widest text-primary">
+            {currentIndex + 1} / {images.length}
+          </p>
         </div>
-
-        {/* Next Button */}
-        <button
-          onClick={onNext}
-          className="absolute right-2 sm:right-6 p-3 rounded-full bg-gray-900/60 hover:bg-primary/20 text-white hover:text-primary transition-all border border-gray-800/40 hover:border-primary/30 z-10"
-          aria-label="Immagine successiva"
-        >
-          <ChevronRight className="h-7 w-7" />
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setZoom((z) => !z)}
+            className="rounded-full border border-white/15 bg-white/5 p-2 transition hover:border-primary/60 hover:text-primary"
+            aria-label={zoom ? "Riduci" : "Ingrandisci"}
+          >
+            {zoom ? <ZoomOut className="h-5 w-5" /> : <ZoomIn className="h-5 w-5" />}
+          </button>
+          <button
+            onClick={onClose}
+            className="rounded-full border border-white/15 bg-white/5 p-2 transition hover:border-primary/60 hover:text-primary"
+            aria-label="Chiudi"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
       </div>
 
-      {/* Thumbnail Strip Footer */}
-      <div className="py-4 flex flex-col items-center justify-center z-10">
-        <div className="flex gap-2.5 overflow-x-auto max-w-full px-4 py-2 justify-start sm:justify-center scrollbar-thin scrollbar-thumb-gray-800">
+      <div
+        className={`relative flex min-h-0 flex-1 ${zoom ? "overflow-auto" : "overflow-hidden"}`}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          key={images[currentIndex]}
+          src={images[currentIndex]}
+          alt={caption || `${title} — immagine ${currentIndex + 1}`}
+          onClick={() => setZoom((z) => !z)}
+          draggable={false}
+          className={`m-auto select-none ${
+            zoom ? "max-w-none cursor-zoom-out" : "max-h-full max-w-full cursor-zoom-in object-contain"
+          }`}
+          style={zoom ? { width: "220%" } : undefined}
+        />
+        {!zoom && (
+          <>
+            <button
+              onClick={onPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-black/50 p-2.5 transition hover:border-primary/60 hover:text-primary sm:left-5"
+              aria-label="Immagine precedente"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={onNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-black/50 p-2.5 transition hover:border-primary/60 hover:text-primary sm:right-5"
+              aria-label="Immagine successiva"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </>
+        )}
+      </div>
+
+      {caption && !zoom && (
+        <p className="mx-auto max-h-24 max-w-3xl overflow-y-auto px-6 pt-3 text-center text-sm font-light leading-relaxed text-foreground/70">
+          {caption}
+        </p>
+      )}
+
+      <div className="px-4 pb-4 pt-3">
+        <div ref={thumbs} className="flex gap-2 overflow-x-auto px-1 py-1 sm:justify-center">
           {images.map((img, idx) => (
             <button
-              key={idx}
+              key={img}
               onClick={() => onSelectIndex(idx)}
-              className={`relative flex-shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-md overflow-hidden border-2 transition-all ${
-                idx === currentIndex
-                  ? "border-primary opacity-100 scale-105"
-                  : "border-gray-800 opacity-40 hover:opacity-75"
+              aria-label={`Vai all'immagine ${idx + 1}`}
+              className={`h-12 w-16 flex-shrink-0 overflow-hidden border transition sm:h-14 sm:w-20 ${
+                idx === currentIndex ? "border-primary opacity-100" : "border-white/10 opacity-40 hover:opacity-80"
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img} alt="Miniatura" className="w-full h-full object-cover" />
+              <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>

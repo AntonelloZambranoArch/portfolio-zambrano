@@ -1,229 +1,186 @@
 "use client";
 
 import { useState } from "react";
-import { Folder, Layers, Eye } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Images } from "lucide-react";
 import Lightbox from "./Lightbox";
+import { filters, projects } from "@/lib/projects";
+
+// Disegni tecnici: mai ritagliati, per restare leggibili.
+const CONTAIN_SLUGS = new Set(["studi-di-facciata"]);
+
+function Tile({ project, index, className, onOpen, remaining }) {
+  const contain = CONTAIN_SLUGS.has(project.slug);
+  const [w, h] = project.sizes[index];
+  return (
+    <button
+      type="button"
+      onClick={() => onOpen(index)}
+      className={`group relative overflow-hidden bg-card-bg text-left ${className}`}
+      aria-label={`${project.title} — apri immagine ${index + 1}`}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={project.images[index]}
+        alt={`${project.title} — immagine ${index + 1}`}
+        width={w}
+        height={h}
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 h-full w-full transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04] ${
+          contain ? "object-contain p-2" : "object-cover"
+        }`}
+      />
+      <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-foreground/10 group-hover:ring-primary/50 transition" />
+      {remaining > 0 && (
+        <span className="absolute inset-0 flex items-center justify-center bg-background/70 font-serif text-3xl text-primary">
+          +{remaining}
+        </span>
+      )}
+    </button>
+  );
+}
+
+function Mosaic({ project, onOpen }) {
+  const total = project.images.length;
+  const shown = Math.min(total, 5);
+  const remaining = total - shown;
+
+  if (shown === 1) {
+    return <Tile project={project} index={0} onOpen={onOpen} remaining={0} className="aspect-[16/9] w-full" />;
+  }
+  if (shown === 2) {
+    return (
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
+        {[0, 1].map((i) => (
+          <Tile key={i} project={project} index={i} onOpen={onOpen} remaining={0} className="aspect-[4/3]" />
+        ))}
+      </div>
+    );
+  }
+  if (shown === 3) {
+    return (
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
+        <Tile project={project} index={0} onOpen={onOpen} remaining={0} className="col-span-2 aspect-[16/9]" />
+        <Tile project={project} index={1} onOpen={onOpen} remaining={0} className="aspect-[4/3]" />
+        <Tile project={project} index={2} onOpen={onOpen} remaining={0} className="aspect-[4/3]" />
+      </div>
+    );
+  }
+  return (
+    <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+      <Tile
+        project={project}
+        index={0}
+        onOpen={onOpen}
+        remaining={0}
+        className="col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto md:min-h-[26rem]"
+      />
+      {Array.from({ length: shown - 1 }, (_, k) => k + 1).map((i) => (
+        <Tile
+          key={i}
+          project={project}
+          index={i}
+          onOpen={onOpen}
+          remaining={i === shown - 1 ? remaining : 0}
+          className="aspect-[4/3]"
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState("all");
-  const [lightboxState, setLightboxState] = useState({
-    isOpen: false,
-    projectIndex: 0,
-    imageIndex: 0,
-  });
+  const [lightbox, setLightbox] = useState(null); // { slug, index }
 
-  const filters = [
-    { id: "all", name: "Tutti" },
-    { id: "residenziale", name: "Residenziale" },
-    { id: "commerciale", name: "Commerciale & Uffici" },
-    { id: "strutture", name: "Ingegneria & Strutture" },
-    { id: "rendering", name: "Rendering 3D" },
-  ];
+  const visible =
+    activeFilter === "all" ? projects : projects.filter((p) => p.category === activeFilter);
+  const active = lightbox ? projects.find((p) => p.slug === lightbox.slug) : null;
 
-  const projects = [
-    {
-      title: "Rigenerazione Urbana — Ex Conserviera Coppola",
-      category: "residenziale",
-      categoryLabel: "Residenziale & Urbanistica",
-      desc: "Riqualificazione di un'area industriale dismessa in un polo residenziale di pregio: 60 alloggi in classe energetica A4 (NZEB), cessione di verde pubblico e parcheggio al Comune, progettazione integrale architettonica e strutturale.",
-      cover: "/coppola/ORTOFOTO-COPPOLA.png",
-      images: [
-        "/coppola/ORTOFOTO-COPPOLA.png",
-        "/coppola/1-COPPOLA.jpg",
-        "/coppola/2-COPPOLA.png",
-        "/coppola/3-COPPOLA.png",
-        "/coppola/5-COPPOLA.png",
-        "/coppola/6-COPPOLA.png",
-        "/coppola/7-COPPOLA.tif",
-        "/coppola/8-COPPOLA.tif",
-      ],
-    },
-    {
-      title: 'Ristorante "Antica Lucciola"',
-      category: "commerciale",
-      categoryLabel: "Commerciale",
-      desc: "Progettazione degli spazi interni ed esterni per l'attività di ristorazione 'Antica Lucciola', combinando estetica rustico-moderna e funzionalità commerciale.",
-      cover: "/antica-lucciola/LUCCIOLA.png",
-      images: [
-        "/antica-lucciola/LUCCIOLA.png",
-        "/antica-lucciola/antica-lucciola.jpeg",
-        "/antica-lucciola/antica-lucciola-1.jpeg",
-      ],
-    },
-    {
-      title: "Residenza Lombardi",
-      category: "residenziale",
-      categoryLabel: "Residenziale",
-      desc: "Progetto di ristrutturazione edilizia e ridistribuzione dei volumi interni per villa monofamiliare, ottimizzando l'illuminazione naturale e la vivibilità.",
-      cover: "/lombardi/1.png",
-      images: [
-        "/lombardi/1.png",
-        "/lombardi/2.png",
-        "/lombardi/3.png",
-        "/lombardi/4.png",
-        "/lombardi/5.png",
-        "/lombardi/Senza titolo.png",
-      ],
-    },
-    {
-      title: "Disegni Strutturali Priscoli",
-      category: "strutture",
-      categoryLabel: "Ingegneria & Strutture",
-      desc: "Calcolo strutturale e produzione di esecutivi di carpenteria metallica e cemento armato (Daponte) per opere di consolidamento e miglioramento sismico.",
-      cover: "/priscoli/DAPONTE.png",
-      images: [
-        "/priscoli/DAPONTE.png",
-        "/priscoli/DAPONTE-1.png",
-        "/priscoli/DAPONTE-2.png",
-        "/priscoli/Senza titolo.png",
-      ],
-    },
-    {
-      title: "Villa San Vincenzo",
-      category: "residenziale",
-      categoryLabel: "Residenziale",
-      desc: "Progettazione e direzione lavori di una palazzina signorile con dettagli costruttivi ed infissi ad alta efficienza termico-acustica.",
-      cover: "/san-vincenzo/1.png",
-      images: [
-        "/san-vincenzo/1.png",
-        "/san-vincenzo/2.png",
-        "/san-vincenzo/3.png",
-        "/san-vincenzo/4.png",
-        "/san-vincenzo/5.png",
-        "/san-vincenzo/6.png",
-        "/san-vincenzo/7.png",
-        "/san-vincenzo/8.png",
-        "/san-vincenzo/9.png",
-        "/san-vincenzo/Senza titolo.png",
-      ],
-    },
-    {
-      title: "Lottizzazione e Lotto Torello",
-      category: "residenziale",
-      categoryLabel: "Residenziale & Urbanistica",
-      desc: "Piano di lottizzazione ed edificabilità per comparto residenziale. Rilievo topografico, progettazione architettonica e particolari costruttivi delle singole unità.",
-      cover: "/torello/1.png",
-      images: [
-        "/torello/1.png",
-        "/torello/2.png",
-        "/torello/3.png",
-        "/torello/4.png",
-        "/torello/5.png",
-        "/torello/6.png",
-        "/torello/7.png",
-        "/torello/8.png",
-        "/torello/9.png",
-        "/torello/Lotto-1.png",
-        "/torello/Senza titolo.png",
-      ],
-    },
-    {
-      title: "Lottizzazione Convenzionata C/3 — Acigliano",
-      category: "residenziale",
-      categoryLabel: "Residenziale & Urbanistica",
-      desc: "Progetto di lottizzazione convenzionata in frazione Acigliano (Mercato San Severino): 30 lotti residenziali con urbanizzazione primaria e secondaria, progettazione integrale architettonica e strutturale, direzione lavori, accatastamento, studio termico e pratiche per l'agibilità.",
-      cover: "/aci/mappa-lottizzazione.png",
-      images: [
-        "/aci/mappa-lottizzazione.png",
-        "/aci/1-peppe.jpg",
-        "/aci/2-orlando.png",
-        "/aci/3-tonino.png",
-        "/aci/4-zam.png",
-        "/aci/5-vincenzo.png",
-        "/aci/6-ascolese.png",
-        "/aci/8-pasquale.png",
-        "/aci/9-gaetanino.png",
-        "/aci/10-pasquale.png",
-        "/aci/11-antonino.png",
-        "/aci/12-citro.png",
-        "/aci/13-ascolese.png",
-        "/aci/14-mimmo.png",
-        "/aci/15-verzella.png",
-        "/aci/16-mimmo.png",
-        "/aci/17-izzo.png",
-        "/aci/18-annalea.png",
-        "/aci/19-difidio.png",
-        "/aci/20-impresa-napoli.png",
-        "/aci/21-lucio.png",
-      ],
-    },
-    {
-      title: "Rendering Architettonici 3D",
-      category: "rendering",
-      categoryLabel: "Rendering 3D",
-      desc: "Raccolta di rendering fotorealistici realizzati per la modellazione d'interni, cucine di lusso, loft con soppalco, zone giorno e facciate di palazzine residenziali.",
-      cover: "/VILLA-PROG-1.png",
-      images: [
-        "/VILLA-PROG-1.png",
-        "/PORTICO-2-RENDER.png",
-        "/CUCINA-2.png",
-        "/garage-1.png",
-        "/SOGG-1.png",
-        "/TERRAZZO-1.png",
-        "/PALAZZINA-2.png",
-        "/RENDER-4-SOGG.jpg",
-        "/RENDER-1-LIBRERIA.jpg",
-      ],
-    },
-  ];
-
-  const filteredProjects = activeFilter === "all"
-    ? projects
-    : projects.filter((p) => p.category === activeFilter);
-
-  const openLightbox = (projIdx, imgIdx = 0) => {
-    setLightboxState({ isOpen: true, projectIndex: projIdx, imageIndex: imgIdx });
-  };
-
-  const closeLightbox = () => {
-    setLightboxState((prev) => ({ ...prev, isOpen: false }));
-  };
-
-  const activeProject = projects[lightboxState.projectIndex];
+  const step = (delta) =>
+    setLightbox((s) => ({
+      ...s,
+      index: (s.index + delta + active.images.length) % active.images.length,
+    }));
 
   return (
-    <section id="galleria" className="py-24 bg-[#090d16]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-primary uppercase tracking-widest text-sm font-bold">Portfolio Lavori</h2>
-          <h3 className="text-4xl text-white font-bold mt-2">Galleria Progetti</h3>
+    <section id="galleria" className="bg-background py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 text-center">
+          <h2 className="text-sm font-light uppercase tracking-[0.3em] text-primary">Portfolio</h2>
+          <h3 className="mt-3 font-serif text-4xl font-medium text-foreground sm:text-5xl">
+            Lavori selezionati
+          </h3>
+          <div className="mx-auto mt-6 h-px w-24 bg-primary/60" />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="mb-16 flex flex-wrap justify-center gap-2 sm:gap-3">
           {filters.map((f) => (
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition ${activeFilter === f.id ? "bg-primary text-white" : "bg-gray-800 text-gray-400 hover:bg-gray-700"}`}
+              className={`border px-4 py-2 text-xs font-light uppercase tracking-widest transition sm:px-5 ${
+                activeFilter === f.id
+                  ? "border-primary bg-primary text-background"
+                  : "border-foreground/15 text-foreground/60 hover:border-primary/60 hover:text-primary"
+              }`}
             >
               {f.name}
             </button>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {filteredProjects.map((p) => {
-            const globalIdx = projects.findIndex((pro) => pro.title === p.title);
-            return (
-              <div key={p.title} onClick={() => openLightbox(globalIdx)} className="cursor-pointer group bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-primary transition">
-                <img src={p.cover} alt={p.title} className="w-full aspect-video object-cover" />
-                <div className="p-6">
-                  <h4 className="text-white font-bold text-lg">{p.title}</h4>
-                  <p className="text-gray-400 text-sm mt-2">{p.desc}</p>
+        <div className="space-y-24 sm:space-y-32">
+          {visible.map((p) => (
+            <article key={p.slug} id={p.slug} className="scroll-mt-24">
+              <header className="mb-8 grid items-end gap-4 md:grid-cols-12">
+                <div className="md:col-span-7">
+                  <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
+                    <span className="mr-3 font-serif text-base tracking-normal text-primary/70">{p.num}</span>
+                    {p.kicker}
+                  </p>
+                  <h4 className="mt-3 font-serif text-3xl font-medium leading-tight text-foreground sm:text-4xl">
+                    {p.title}
+                  </h4>
                 </div>
+                <p className="text-base font-light leading-relaxed text-foreground/60 md:col-span-5">
+                  {p.teaser}
+                </p>
+              </header>
+
+              <Mosaic project={p} onOpen={(index) => setLightbox({ slug: p.slug, index })} />
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-light tracking-wide">
+                <button
+                  type="button"
+                  onClick={() => setLightbox({ slug: p.slug, index: 0 })}
+                  className="inline-flex items-center gap-2 text-foreground/70 transition hover:text-primary"
+                >
+                  <Images className="h-4 w-4" /> Sfoglia le {p.images.length} immagini
+                </button>
+                <Link
+                  href={`/progetti/${p.slug}`}
+                  className="inline-flex items-center gap-2 text-primary transition hover:text-accent"
+                >
+                  Scheda del progetto <ArrowUpRight className="h-4 w-4" />
+                </Link>
               </div>
-            );
-          })}
+            </article>
+          ))}
         </div>
       </div>
 
-      {lightboxState.isOpen && (
+      {active && (
         <Lightbox
-          images={activeProject?.images}
-          currentIndex={lightboxState.imageIndex}
-          onClose={closeLightbox}
-          onPrev={() => setLightboxState(p => ({ ...p, imageIndex: (p.imageIndex - 1 + activeProject.images.length) % activeProject.images.length }))}
-          onNext={() => setLightboxState(p => ({ ...p, imageIndex: (p.imageIndex + 1) % activeProject.images.length }))}
+          images={active.images}
+          captions={active.captions}
+          title={active.title}
+          currentIndex={lightbox.index}
+          onClose={() => setLightbox(null)}
+          onPrev={() => step(-1)}
+          onNext={() => step(1)}
+          onSelectIndex={(i) => setLightbox((s) => ({ ...s, index: i }))}
         />
       )}
     </section>

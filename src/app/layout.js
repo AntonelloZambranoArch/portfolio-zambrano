@@ -29,6 +29,18 @@ export const metadata = {
     "NTC 2018",
   ],
   authors: [{ name: "Arch. Antonello Zambrano" }],
+  metadataBase: new URL("https://antonellozambranoarch.vercel.app"),
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Arch. Antonello Zambrano | Architettura & Interior Design",
+    description:
+      "Progettazione architettonica e d'interni, calcolo strutturale e direzione lavori dal 1996.",
+    url: "/",
+    siteName: "Studio Architettura Zambrano",
+    locale: "it_IT",
+    type: "website",
+    images: [{ url: "/portfolio/hero/1.webp", width: 2000, height: 1125 }],
+  },
 };
 
 export default function RootLayout({ children }) {

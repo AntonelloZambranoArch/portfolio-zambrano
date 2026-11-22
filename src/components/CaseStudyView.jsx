@@ -45,7 +45,7 @@ export default function CaseStudyView({ project }) {
         <img
           src={project.cover}
           alt={project.title}
-          className="w-full max-h-[80vh] object-cover cursor-zoom-in"
+          className="w-full max-h-[80vh] object-contain bg-card-bg cursor-zoom-in"
           onClick={() => openLightbox(0)}
         />
       </section>
@@ -66,6 +66,8 @@ export default function CaseStudyView({ project }) {
             <img
               src={img}
               alt={`${project.title} - immagine ${idx + 1}`}
+              loading="lazy"
+              decoding="async"
               className="w-full max-w-4xl object-contain cursor-zoom-in"
               onClick={() => openLightbox(idx)}
             />
@@ -90,6 +92,8 @@ export default function CaseStudyView({ project }) {
       {lightboxIndex !== null && (
         <Lightbox
           images={project.images}
+          captions={project.captions}
+          title={project.title}
           currentIndex={lightboxIndex}
           onClose={closeLightbox}
           onPrev={showPrev}

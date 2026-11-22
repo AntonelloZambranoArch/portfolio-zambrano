@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { ArrowDown, Briefcase, Award } from "lucide-react";
+import { heroImages } from "@/lib/projects";
 
 export default function Hero() {
-  const images = ["/VILLA-PROG-1.png", "/PORTICO-2-RENDER.png", "/CUCINA-2.png"];
+  const images = heroImages;
 
   const [currentIdx, setCurrentIdx] = useState(0);
 
@@ -18,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-28 md:py-0"
     >
       {images.map((img, idx) => (
         <div
@@ -48,7 +49,7 @@ export default function Hero() {
           Trent'anni di esperienza nella progettazione di spazi su misura e nella gestione integrale di cantieri e strutture complesse. Estetica, rigore tecnico e precisione formale al servizio del territorio.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 mb-4 md:mb-16">
           <a
             href="#galleria"
             className="inline-flex items-center justify-center px-8 py-3 border border-primary/60 text-base font-light tracking-wide text-primary hover:bg-primary hover:text-background transition-all duration-300"
@@ -65,7 +66,7 @@ export default function Hero() {
 
         <a
           href="#bio"
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-foreground/40 hover:text-primary transition-colors duration-300 group"
+          className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 transform flex-col items-center text-foreground/40 transition-colors duration-300 hover:text-primary group md:flex"
         >
           <span className="text-xs tracking-widest uppercase mb-2 font-light">Scopri di più</span>
           <ArrowDown className="h-5 w-5 animate-bounce group-hover:text-primary" />
