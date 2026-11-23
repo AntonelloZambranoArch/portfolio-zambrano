@@ -806,7 +806,15 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Legno, arredi integrati, luce morbida e continuità spaziale.",
     "fullDesc": "Legno, arredi integrati, luce morbida e continuità spaziale: zone giorno progettate come un unico ambiente.",
-    "captions": null,
+    "captions": [
+      "Zona living. Raffinata area soggiorno con parete attrezzata in marmo nero venato e inserti in legno, che crea un forte contrasto cromatico e un ambiente di grande prestigio.",
+      "Zona living: dettaglio della parete attrezzata. Rivestimento in marmo nero venato, mobile sospeso, televisore e quadri a parete su pavimento in essenza chiara.",
+      "Living & Dinette. Vista d'insieme che illustra l'integrazione tra la zona conversazione e l'area pranzo, valorizzata da arredi coordinati e illuminazione d'atmosfera.",
+      "Sala di conversazione. Pareti rivestite in pietra, illuminazione d'atmosfera e ampie aperture con persiane.",
+      "Open space: zona conversazione e cucina. Il soggiorno dialoga con la cucina a vista attraverso controsoffitto con illuminazione incassata e pavimento in essenza.",
+      "Living area & Art wall. Soggiorno caratterizzato da una parete blu con doghe verticali che funge da fondale per una galleria d'arte, abbinata a un mobile sospeso in essenza.",
+      "Soggiorno: parete TV attrezzata. Boiserie listellare in legno, mobili bianchi con inserti in essenza e libreria a giorno su pavimento a spina di pesce."
+    ],
     "images": [
       "/portfolio/abitare-contemporaneo-e-caldo/01.webp",
       "/portfolio/abitare-contemporaneo-e-caldo/02.webp",
@@ -861,7 +869,13 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Interni mansardati: la geometria trasformata in identità.",
     "fullDesc": "Interni mansardati: la geometria della copertura trasformata in identità, con soppalchi e arredi su misura.",
-    "captions": null,
+    "captions": [
+      "Sottotetto: zona living con soppalco. Salotto sotto la scala di accesso al soppalco, con travi di copertura a vista e illuminazione calda.",
+      "Soppalco: zona notte. Camera sul soppalco con parapetto in vetro e testata in legno retroilluminata.",
+      "Camera con letto contenitore. Letto su basamento a cassetti, armadiature bianche con profili in legno e luce lineare integrata.",
+      "Camera con letto contenitore: vista opposta. Zona scrivania e galleria di fotografie a parete, con armadiature a tutta altezza.",
+      "Camera matrimoniale. Testata in listelli di legno con taglio di luce LED, poltrona e dettagli decorativi alle pareti."
+    ],
     "images": [
       "/portfolio/abitare-sotto-il-tetto/01.webp",
       "/portfolio/abitare-sotto-il-tetto/02.webp",
@@ -906,7 +920,14 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Elementi su misura, ritmo materico e illuminazione curata.",
     "fullDesc": "Elementi su misura, ritmo materico e illuminazione curata: cantinette, corridoi, sale e spazi accessori.",
-    "captions": null,
+    "captions": [
+      "Vetrina e cantina. Mobile con profili neri e vetro, cantinetta illuminata e nicchia espositiva a lato del passaggio.",
+      "Sala da pranzo. Tavolo in legno con sedute colorate, parete in pietra a vista e controsoffitto con gola luminosa.",
+      "Design dell'autorimessa. Prospettiva d'insieme del box auto della villa, con continuità stilistica degli interni: illuminazione lineare a soffitto, pavimentazione neutra e pannelli fotografici che scandiscono il percorso.",
+      "Galleria d'arte nel box auto. Parete attrezzata con boiserie in legno che incornicia una serie di stampe fotografiche, trasformando un ambiente di servizio in una galleria d'arte privata.",
+      "Corridoio distributivo. Spazio di transizione caratterizzato da rivestimenti a doghe di legno, che conferiscono calore e una ritmica visiva costante che guida il percorso.",
+      "Corridoio distributivo: prospettiva verso il living. Boiserie a listelli, specchio e pavimento in essenza."
+    ],
     "images": [
       "/portfolio/dettaglio-contenimento-atmosfera/01.webp",
       "/portfolio/dettaglio-contenimento-atmosfera/02.webp",
@@ -956,7 +977,14 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Spazi progettati intorno all'incontro, alla visibilità e ai flussi.",
     "fullDesc": "Spazi progettati intorno all'incontro, alla visibilità e ai flussi: cucine, isole e zone pranzo.",
-    "captions": null,
+    "captions": [
+      "Cucina con isola (marmo bianco). Variante di finitura per l'isola, in marmo bianco venato, che conferisce luminosità e un'estetica più eterea allo spazio.",
+      "Cucina con isola (marmo nero). Isola centrale in marmo nero venato, sovrastata da un sistema di illuminazione a sospensione dal design minimale.",
+      "Integrazione zone pranzo e cucina. La separazione è mediata da ampie vetrate color ambra che permettono la continuità visiva mantenendo la distinzione funzionale degli ambienti.",
+      "Cucina e zona pranzo. Isola con piano in legno che funge da tavolo, pensili chiari e ampia apertura sul giardino.",
+      "Cucina lineare. Piano di lavoro con forni da incasso, penisola snack in essenza e illuminazione a gola.",
+      "Cucina lineare: vista frontale. Basi bianche, paraschizzi in marmo venato e pensili in essenza con luce integrata."
+    ],
     "images": [
       "/portfolio/pranzo-cucina-spazio-sociale/01.webp",
       "/portfolio/pranzo-cucina-spazio-sociale/02.webp",
@@ -1006,7 +1034,12 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Bagni e spazi intimi con una palette materica misurata.",
     "fullDesc": "Bagni e spazi intimi con una palette materica misurata.",
-    "captions": null,
+    "captions": [
+      "Bagno. Rivestimento in marmo bianco venato, parete in listelli di legno e specchio circolare retroilluminato.",
+      "Bagno. Mobile lavabo verde oliva, specchio retroilluminato e doccia con anta in vetro.",
+      "Bagno. Decoro floreale a parete, specchio rotondo retroilluminato e mobile sospeso color terracotta.",
+      "Bagno. Decoro floreale e rivestimento tridimensionale, mobile lavabo color terracotta e doccia a filo pavimento."
+    ],
     "images": [
       "/portfolio/ambienti-privati-benessere/01.webp",
       "/portfolio/ambienti-privati-benessere/02.webp",
@@ -1046,7 +1079,12 @@ export const projects = [
     "categoryLabel": "Commerciale & Uffici",
     "teaser": "Uffici e camere d'albergo progettati con arredi su misura.",
     "fullDesc": "Uffici direzionali e camera d'albergo progettati con arredi su misura e un'attenzione costante a luce e materiali.",
-    "captions": null,
+    "captions": [
+      "Studio open space. Libreria divisoria a giorno con retroilluminazione, parete in mattone a vista e postazioni di lavoro.",
+      "Studio open space: vista d'insieme. Pannello di verde verticale, partizioni vetrate e postazioni operative.",
+      "Ufficio direzionale. Scrivania bianca, boiserie chiara e arredi contenitori in tonalità antracite.",
+      "Camera di ospitalità. Scrivania, mobile-cucinotto in essenza e televisore a parete."
+    ],
     "images": [
       "/portfolio/spazi-di-lavoro-e-ospitalita/01.webp",
       "/portfolio/spazi-di-lavoro-e-ospitalita/02.webp",
