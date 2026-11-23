@@ -86,18 +86,18 @@ export const projects = [
   },
   {
     "slug": "baronissi-villa-a-schiera",
-    "title": "Villa Residenziale — Baronissi",
+    "title": "Villa a Schiera Bifamiliare — Baronissi",
     "kicker": "Residenziale",
     "category": "residenziale",
     "categoryLabel": "Residenziale",
-    "teaser": "Edificio residenziale a Baronissi: volumi a cornice bianca, rivestimento in legno e sistemazioni esterne a verde.",
-    "fullDesc": "Progetto residenziale a Baronissi: volumi bianchi a cornice con balconi aggettanti e parapetti in vetro, rivestimento in doghe di legno, frangisole orizzontali e lotto recintato con autorimessa interrata e sistemazioni esterne a verde.",
+    "teaser": "Demolizione di un fabbricato esistente e nuova villa a schiera bifamiliare dal linguaggio contemporaneo.",
+    "fullDesc": "Progetto residenziale a Baronissi (SA): demolizione di un fabbricato esistente e costruzione di una villa a schiera bifamiliare, caratterizzata da un linguaggio architettonico contemporaneo.",
     "captions": [
-      "Prospetto frontale: volumi bianchi a cornice, rivestimento in doghe di legno, frangisole orizzontali e muro di recinzione con illuminazione integrata.",
-      "Vista d'angolo dalla strada: balconi aggettanti con parapetti in vetro, setto in pietra con inserto vetrato e accesso carrabile.",
+      "Prospetto principale: rappresentazione frontale della villa per due alloggi, con la simmetria dei volumi aggettanti dei balconi e il rivestimento in doghe effetto legno.",
+      "Inserimento stradale: vista d'insieme dalla strada che enfatizza la recinzione perimetrale in pietra e il design moderno delle facciate bifamiliari.",
       "Vista di spigolo: articolazione dei volumi su più livelli, pensilina in acciaio all'ingresso e recinzione con verde perimetrale.",
-      "Vista aerea: impianto del lotto, copertura piana, autorimessa interrata e sistemazioni esterne a verde.",
-      "Dettaglio dell'ingresso: rivestimento in legno, portafinestra scorrevole, percorso in lastre di pietra e verde ornamentale."
+      "Vista zenitale (drone): inserimento nel lotto, distribuzione degli spazi esterni, rampa di accesso al piano interrato e pensilina ombreggiante.",
+      "Dettaglio prospettico: focus sul piano terra, con integrazione tra il rivestimento in doghe effetto legno e i serramenti a tutta altezza."
     ],
     "images": [
       "/portfolio/baronissi-villa-a-schiera/01.webp",
@@ -255,7 +255,7 @@ export const projects = [
       "Residenza: estetica organica. Progetto caratterizzato da volumi plastici che si snodano nel lotto, creando un'architettura organica capace di fondersi con l'ambiente circostante.",
       "Edificio residenziale: trasparenza e aggetti. Struttura definita da ampie balconate aggettanti che scandiscono il prospetto, conferendo leggerezza e favorendo l'integrazione tra interno ed esterno.",
       "Villa bifamiliare: armonia residenziale. Abitazione definita da volumi compatti e rifiniti con cura, che si inserisce nel contesto della lottizzazione garantendo privacy e comfort abitativo.",
-      "Veduta del progetto."
+      "Villa unifamiliare: porticato ad archi. Abitazione con loggia a tre archi al piano terra e copertura a falde, inserita nel lotto con recinzione piena."
     ],
     "images": [
       "/portfolio/san-vincenzo/01.webp",
@@ -337,7 +337,7 @@ export const projects = [
       "Residenza unifamiliare: coerenza compositiva. Progetto residenziale che si distingue per il rigore dei volumi e una finitura curata, armonizzandosi con l'impianto della lottizzazione.",
       "Villa unifamiliare: articolazione materica. Abitazione che esplora il contrasto materico nei prospetti, definendo una volumetria riconoscibile ed equilibrata.",
       "Residenza unifamiliare: dialogo con il sito. Edificio residenziale progettato per integrare i volumi nel lotto di pertinenza, con un'attenzione particolare alle finiture esterne.",
-      "Residenza unifamiliare: chiusura del comparto. Elemento architettonico conclusivo della lottizzazione, caratterizzato da un'impostazione formale che completa il profilo urbano dell'area."
+      "Residenza unifamiliare: struttura in corso di realizzazione. Edificio a più livelli con struttura portante completata, in attesa delle finiture, a chiusura del comparto."
     ],
     "images": [
       "/portfolio/torello/01.webp",
@@ -414,27 +414,27 @@ export const projects = [
     "teaser": "30 lotti residenziali con urbanizzazione primaria e secondaria: dal singolo edificio all'ambiente completo.",
     "fullDesc": "Lottizzazione convenzionata nella frazione Acigliano di Mercato San Severino: 30 lotti residenziali con urbanizzazione primaria e secondaria. Progettazione architettonica e strutturale, strade, reti e illuminazione pubblica, spazi pubblici e collettivi, direzione lavori e consegna, accatastamento, studio termico e pratiche per l'agibilità. Un quadro pianificatorio completo che dimostra il coordinamento tra sito, edifici e infrastrutture.",
     "captions": [
-      "Ortofoto dell'area di intervento con perimetrazione della lottizzazione.",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      "Lottizzazione convenzionata C/3, Acigliano: masterplan e infrastrutture. L'ortofoto illustra l'assetto morfologico della lottizzazione, caratterizzata da una trama insediativa ordinata e coerente con il contesto paesaggistico circostante, con maglia viaria interna di collegamento tra le unità unifamiliari e plurifamiliari.",
+      "Residenza unifamiliare: sintesi volumetrica. Composizione architettonica caratterizzata dall'integrazione tra un corpo basamentale rivestito in ceramica e una geometria superiore curva, che modula la plasticità della struttura nel contesto residenziale.",
+      "Villa unifamiliare: contrasti materici. Progetto residenziale basato sul contrasto tra il rivestimento chiaro dei volumi geometrici e la volumetria curva del coronamento, definendo un linguaggio moderno e armonico.",
+      "Residenza bifamiliare: geometria e trasparenze. Edificio caratterizzato da una volumetria curva al piano superiore e da un ampio sistema di aperture, progettato per massimizzare il comfort visivo e l'integrazione con lo spazio esterno.",
+      "Villa quadrifamiliare: articolazione dei prospetti. Intervento residenziale contraddistinto da una composizione dei volumi complessa, con terrazzamenti aggettanti e un uso sapiente dei pieni e dei vuoti che definisce l'identità dell'edificio.",
+      "Villa unifamiliare: plasticità volumetrica. Residenza definita da linee curve continue che conferiscono dinamismo alla facciata, con un'articolazione dei volumi studiata per ottimizzare l'esposizione e il rapporto con il lotto di pertinenza.",
+      "Residenza unifamiliare: equilibrio formale. Struttura residenziale caratterizzata da un'impostazione formale classica rivisitata, con un gioco di coperture a falde e volumi aggettanti che definiscono uno spazio domestico accogliente ed equilibrato.",
+      "Residenza unifamiliare: integrazione paesaggistica. Abitazione caratterizzata da uno sviluppo orizzontale e da un linguaggio architettonico che integra elementi tradizionali a falde con ampie superfici vetrate, garantendo continuità tra interno ed esterno.",
+      "Residenza unifamiliare: design contemporaneo. Fabbricato caratterizzato da un'impostazione geometrica netta e dall'impiego di ampie vetrate, progettato per enfatizzare la luminosità degli spazi abitativi interni e la leggerezza volumetrica.",
+      "Villa unifamiliare: integrazione funzionale. Progetto residenziale che coniuga un impianto planimetrico funzionale con un'estetica ricercata, caratterizzato da finiture di pregio e da un'attenta cura nel rapporto con il lotto di pertinenza.",
+      "Residenza unifamiliare: linguaggio tradizionale. Edificio caratterizzato da un impianto classico con tetto a falde, impreziosito da decorazioni in facciata e da un sistema di recinzione in pietra che ne definisce il perimetro.",
+      "Villa unifamiliare: volumi dinamici. Edificio residenziale connotato dalla sovrapposizione di volumi distinti e dall'uso di una palette cromatica calda, con un'articolazione delle facciate che crea ritmi e profondità variabili.",
+      "Residenza bifamiliare: volume curvo in sommità. Edificio con coronamento a pianta curva, ingresso con elementi in pietra e prospetti dalla cromia calda.",
+      "Residenza in ristrutturazione: cantiere. Fabbricato in fase di riqualificazione, caratterizzato da un'impalcatura che avvolge la struttura, evidenziando l'intervento di recupero dei volumi e dei prospetti esistenti.",
+      "Villa unifamiliare: porticati e archi. Abitazione definita da un sistema di ampi archi a tutto sesto che creano una loggia vivibile, conferendo eleganza e continuità spaziale tra l'interno e il giardino.",
+      "Residenza in ristrutturazione: volumi. Immobile in fase di cantiere, caratterizzato da uno scheletro strutturale che rivela una volumetria definita, pronta per la definizione delle finiture architettoniche.",
+      "Residenza plurifamiliare: rigore compositivo. Struttura residenziale caratterizzata da una chiara scansione volumetrica, con balconate aggettanti che definiscono l'estetica dei prospetti e ottimizzano la fruizione degli spazi aperti.",
+      "Villa unifamiliare: spazi aperti. Abitazione connotata da aggetti pronunciati e da finiture in laterizio a vista nei pilastri, che creano un gioco di ombre e volumi architettonici di carattere moderno.",
+      "Edificio residenziale a schiera bifamiliare: dinamismo plastico. Struttura caratterizzata da ampi volumi aggettanti, con un elemento curvo distintivo che dinamizza la facciata e definisce un linguaggio architettonico contemporaneo.",
+      "Villa a schiera trifamiliare: composizione materica. Progetto residenziale che integra un elemento cilindrico in pietra con volumi geometrici regolari, creando un contrasto materico distintivo che valorizza l'ingresso e la facciata.",
+      "Villa a schiera bifamiliare: dettagli costruttivi. Fronte a schiera con aggetti pronunciati e finiture in laterizio a vista, che definiscono l'ingombro dei volumi lungo la strada."
     ],
     "images": [
       "/portfolio/acigliano/01.webp",
@@ -566,7 +566,7 @@ export const projects = [
       "Edificio a corte: sviluppo semicircolare. Struttura a pianta semicircolare dotata di tre corpi scala, capace di accogliere 24 unità abitative in un'architettura armoniosa e protetta.",
       "Edificio residenziale: continuità volumetrica. Dettaglio del complesso principale che enfatizza la continuità dei prospetti e la qualità degli spazi comuni esterni.",
       "Complesso a schiera: 5 villette. Edificio residenziale a schiera composto da 5 unità abitative, progettato per garantire indipendenza e comfort nel contesto della riqualificazione.",
-      "Edificio misto: integrazione commerciale. Fronti residenziali a schiera composti da 5 villette indipendenti; una soluzione progettuale che coniuga privacy e coesione architettonica in un contesto di rigenerazione urbana."
+      "Edificio residenziale: volumi curvi e terrazzi. Fronte con balcone semicircolare in aggetto e volumi sfalsati, in dialogo con il complesso semicircolare."
     ],
     "images": [
       "/portfolio/residenza-lombardi/01.webp",
@@ -806,7 +806,15 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Legno, arredi integrati, luce morbida e continuità spaziale.",
     "fullDesc": "Legno, arredi integrati, luce morbida e continuità spaziale: zone giorno progettate come un unico ambiente.",
-    "captions": null,
+    "captions": [
+      "Zona living. Raffinata area soggiorno con parete attrezzata in marmo nero venato e inserti in legno, che crea un forte contrasto cromatico e un ambiente di grande prestigio.",
+      "Zona living: dettaglio della parete attrezzata. Rivestimento in marmo nero venato, mobile sospeso, televisore e quadri a parete su pavimento in essenza chiara.",
+      "Living & Dinette. Vista d'insieme che illustra l'integrazione tra la zona conversazione e l'area pranzo, valorizzata da arredi coordinati e illuminazione d'atmosfera.",
+      "Sala di conversazione. Pareti rivestite in pietra, illuminazione d'atmosfera e ampie aperture con persiane.",
+      "Open space: zona conversazione e cucina. Il soggiorno dialoga con la cucina a vista attraverso controsoffitto con illuminazione incassata e pavimento in essenza.",
+      "Living area & Art wall. Soggiorno caratterizzato da una parete blu con doghe verticali che funge da fondale per una galleria d'arte, abbinata a un mobile sospeso in essenza.",
+      "Soggiorno: parete TV attrezzata. Boiserie listellare in legno, mobili bianchi con inserti in essenza e libreria a giorno su pavimento a spina di pesce."
+    ],
     "images": [
       "/portfolio/abitare-contemporaneo-e-caldo/01.webp",
       "/portfolio/abitare-contemporaneo-e-caldo/02.webp",
@@ -861,7 +869,13 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Interni mansardati: la geometria trasformata in identità.",
     "fullDesc": "Interni mansardati: la geometria della copertura trasformata in identità, con soppalchi e arredi su misura.",
-    "captions": null,
+    "captions": [
+      "Sottotetto: zona living con soppalco. Salotto sotto la scala di accesso al soppalco, con travi di copertura a vista e illuminazione calda.",
+      "Soppalco: zona notte. Camera sul soppalco con parapetto in vetro e testata in legno retroilluminata.",
+      "Camera con letto contenitore. Letto su basamento a cassetti, armadiature bianche con profili in legno e luce lineare integrata.",
+      "Camera con letto contenitore: vista opposta. Zona scrivania e galleria di fotografie a parete, con armadiature a tutta altezza.",
+      "Camera matrimoniale. Testata in listelli di legno con taglio di luce LED, poltrona e dettagli decorativi alle pareti."
+    ],
     "images": [
       "/portfolio/abitare-sotto-il-tetto/01.webp",
       "/portfolio/abitare-sotto-il-tetto/02.webp",
@@ -906,7 +920,14 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Elementi su misura, ritmo materico e illuminazione curata.",
     "fullDesc": "Elementi su misura, ritmo materico e illuminazione curata: cantinette, corridoi, sale e spazi accessori.",
-    "captions": null,
+    "captions": [
+      "Vetrina e cantina. Mobile con profili neri e vetro, cantinetta illuminata e nicchia espositiva a lato del passaggio.",
+      "Sala da pranzo. Tavolo in legno con sedute colorate, parete in pietra a vista e controsoffitto con gola luminosa.",
+      "Design dell'autorimessa. Prospettiva d'insieme del box auto della villa, con continuità stilistica degli interni: illuminazione lineare a soffitto, pavimentazione neutra e pannelli fotografici che scandiscono il percorso.",
+      "Galleria d'arte nel box auto. Parete attrezzata con boiserie in legno che incornicia una serie di stampe fotografiche, trasformando un ambiente di servizio in una galleria d'arte privata.",
+      "Corridoio distributivo. Spazio di transizione caratterizzato da rivestimenti a doghe di legno, che conferiscono calore e una ritmica visiva costante che guida il percorso.",
+      "Corridoio distributivo: prospettiva verso il living. Boiserie a listelli, specchio e pavimento in essenza."
+    ],
     "images": [
       "/portfolio/dettaglio-contenimento-atmosfera/01.webp",
       "/portfolio/dettaglio-contenimento-atmosfera/02.webp",
@@ -956,7 +977,14 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Spazi progettati intorno all'incontro, alla visibilità e ai flussi.",
     "fullDesc": "Spazi progettati intorno all'incontro, alla visibilità e ai flussi: cucine, isole e zone pranzo.",
-    "captions": null,
+    "captions": [
+      "Cucina con isola (marmo bianco). Variante di finitura per l'isola, in marmo bianco venato, che conferisce luminosità e un'estetica più eterea allo spazio.",
+      "Cucina con isola (marmo nero). Isola centrale in marmo nero venato, sovrastata da un sistema di illuminazione a sospensione dal design minimale.",
+      "Integrazione zone pranzo e cucina. La separazione è mediata da ampie vetrate color ambra che permettono la continuità visiva mantenendo la distinzione funzionale degli ambienti.",
+      "Cucina e zona pranzo. Isola con piano in legno che funge da tavolo, pensili chiari e ampia apertura sul giardino.",
+      "Cucina lineare. Piano di lavoro con forni da incasso, penisola snack in essenza e illuminazione a gola.",
+      "Cucina lineare: vista frontale. Basi bianche, paraschizzi in marmo venato e pensili in essenza con luce integrata."
+    ],
     "images": [
       "/portfolio/pranzo-cucina-spazio-sociale/01.webp",
       "/portfolio/pranzo-cucina-spazio-sociale/02.webp",
@@ -1006,7 +1034,12 @@ export const projects = [
     "categoryLabel": "Interior Design",
     "teaser": "Bagni e spazi intimi con una palette materica misurata.",
     "fullDesc": "Bagni e spazi intimi con una palette materica misurata.",
-    "captions": null,
+    "captions": [
+      "Bagno. Rivestimento in marmo bianco venato, parete in listelli di legno e specchio circolare retroilluminato.",
+      "Bagno. Mobile lavabo verde oliva, specchio retroilluminato e doccia con anta in vetro.",
+      "Bagno. Decoro floreale a parete, specchio rotondo retroilluminato e mobile sospeso color terracotta.",
+      "Bagno. Decoro floreale e rivestimento tridimensionale, mobile lavabo color terracotta e doccia a filo pavimento."
+    ],
     "images": [
       "/portfolio/ambienti-privati-benessere/01.webp",
       "/portfolio/ambienti-privati-benessere/02.webp",
@@ -1046,7 +1079,12 @@ export const projects = [
     "categoryLabel": "Commerciale & Uffici",
     "teaser": "Uffici e camere d'albergo progettati con arredi su misura.",
     "fullDesc": "Uffici direzionali e camera d'albergo progettati con arredi su misura e un'attenzione costante a luce e materiali.",
-    "captions": null,
+    "captions": [
+      "Studio open space. Libreria divisoria a giorno con retroilluminazione, parete in mattone a vista e postazioni di lavoro.",
+      "Studio open space: vista d'insieme. Pannello di verde verticale, partizioni vetrate e postazioni operative.",
+      "Ufficio direzionale. Scrivania bianca, boiserie chiara e arredi contenitori in tonalità antracite.",
+      "Camera di ospitalità. Scrivania, mobile-cucinotto in essenza e televisore a parete."
+    ],
     "images": [
       "/portfolio/spazi-di-lavoro-e-ospitalita/01.webp",
       "/portfolio/spazi-di-lavoro-e-ospitalita/02.webp",
