@@ -155,15 +155,17 @@ export default function Gallery() {
                 </p>
               </header>
 
-              {p.slug === "coppola-capoluogo" && (
-                <section aria-label="Cortometraggio Capoluogo Coppola" className="mb-10">
+              {p.film && (
+                <section aria-label={`Cortometraggio ${p.title}`} className="mb-10">
                   <h3 className="mb-4 font-serif text-3xl text-foreground">Guarda il cortometraggio</h3>
                   <ProjectFilm
                     poster={p.cover}
+                    src={p.film.src}
+                    title={p.title}
                     className="aspect-video w-full bg-black object-contain"
                   />
                   <a
-                    href="/portfolio/coppola-capoluogo/film-chill-house-rev03.mp4"
+                    href={p.film.src}
                     className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
                   >
                     Apri il video a schermo intero

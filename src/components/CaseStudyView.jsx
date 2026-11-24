@@ -52,15 +52,17 @@ export default function CaseStudyView({ project }) {
         />
       </section>
 
-      {project.slug === "coppola-capoluogo" && (
+      {project.film && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-24">
           <p className="mb-3 text-xs uppercase tracking-[0.22em] text-primary">Cortometraggio</p>
-          <h2 className="mb-6 font-serif text-3xl font-light text-foreground sm:text-4xl">Capoluogo Coppola — In movimento</h2>
+          <h2 className="mb-6 font-serif text-3xl font-light text-foreground sm:text-4xl">{project.film.title}</h2>
           {filmUnavailable && (
             <p role="status" className="mb-4 text-foreground/80">Il video non è disponibile al momento. Riprova tra poco.</p>
           )}
           <ProjectFilm
             poster={project.cover}
+            src={project.film.src}
+            title={project.title}
             className="aspect-video w-full bg-black"
             onError={() => setFilmUnavailable(true)}
           />
@@ -121,3 +123,4 @@ export default function CaseStudyView({ project }) {
     </main>
   );
 }
+

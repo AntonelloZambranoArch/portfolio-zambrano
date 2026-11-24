@@ -23,6 +23,7 @@ export const heroVideo = { src: "/portfolio/hero/slowmotion.mp4", poster: "/port
 export const projects = [
   {
     "slug": "coppola-capoluogo",
+    "film": { "title": "Capoluogo Coppola — In movimento", "src": "/portfolio/coppola-capoluogo/film-chill-house-rev03.mp4" },
     "title": "Capoluogo Coppola — Rigenerazione Urbana",
     "kicker": "Progetto di Rigenerazione Urbana",
     "category": "urbanistica",
@@ -92,6 +93,7 @@ export const projects = [
 },
   {
     "slug": "baronissi-villa-a-schiera",
+    "film": { "title": "Baronissi — Villa a schiera bifamiliare", "src": "/portfolio/baronissi-villa-a-schiera/film-baronissi-rev01.mp4" },
     "title": "Villa a Schiera Bifamiliare — Baronissi",
     "kicker": "Residenziale",
     "category": "residenziale",

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { Volume2 } from "lucide-react";
 
-export default function ProjectFilm({ poster, className, onError }) {
+export default function ProjectFilm({ poster, className, onError, src, title }) {
   const videoRef = useRef(null);
   const [message, setMessage] = useState("");
 
@@ -31,8 +31,8 @@ export default function ProjectFilm({ poster, className, onError }) {
         height="1080"
         poster={poster}
         onError={onError}
-        src="/portfolio/coppola-capoluogo/film-chill-house-rev03.mp4"
-        aria-label="Cortometraggio Capoluogo Coppola con musica e didascalie"
+        src={src}
+        aria-label={`Cortometraggio ${title} con musica e didascalie`}
       />
       <button
         type="button"
