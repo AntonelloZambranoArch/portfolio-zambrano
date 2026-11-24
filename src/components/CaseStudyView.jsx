@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Lightbox from "./Lightbox";
+import ProjectFilm from "./ProjectFilm";
 
 export default function CaseStudyView({ project }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -58,7 +59,11 @@ export default function CaseStudyView({ project }) {
           {filmUnavailable && (
             <p role="status" className="mb-4 text-foreground/80">Il video non è disponibile al momento. Riprova tra poco.</p>
           )}
-          <video className="aspect-video w-full bg-black" controls playsInline preload="none" poster={project.cover} onError={() => setFilmUnavailable(true)} src="/portfolio/coppola-capoluogo/coppola-cinematic-web.mp4" aria-label="Film architettonico Capoluogo Coppola" />
+          <ProjectFilm
+            poster={project.cover}
+            className="aspect-video w-full bg-black"
+            onError={() => setFilmUnavailable(true)}
+          />
         </section>
       )}
 

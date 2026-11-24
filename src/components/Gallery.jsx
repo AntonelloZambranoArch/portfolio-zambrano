@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Images } from "lucide-react";
 import Lightbox from "./Lightbox";
+import ProjectFilm from "./ProjectFilm";
 import { filters, projects } from "@/lib/projects";
 
 // Disegni tecnici: mai ritagliati, per restare leggibili.
@@ -157,19 +158,12 @@ export default function Gallery() {
               {p.slug === "coppola-capoluogo" && (
                 <section aria-label="Cortometraggio Capoluogo Coppola" className="mb-10">
                   <h3 className="mb-4 font-serif text-3xl text-foreground">Guarda il cortometraggio</h3>
-                  <video
-                    controls
-                    playsInline
-                    preload="none"
+                  <ProjectFilm
                     poster={p.cover}
-                    width="1280"
-                    height="720"
                     className="aspect-video w-full bg-black object-contain"
-                    src="/portfolio/coppola-capoluogo/coppola-cinematic-web.mp4"
-                    aria-label="Cortometraggio Capoluogo Coppola — con musica e didascalie"
                   />
                   <a
-                    href="/portfolio/coppola-capoluogo/coppola-cinematic-web.mp4"
+                    href="/portfolio/coppola-capoluogo/film-con-musica.mp4"
                     className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
                   >
                     Apri il video a schermo intero
