@@ -27,24 +27,15 @@ export default function ContactForm() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      // Invio reale via FormSubmit (richiede una sola attivazione: vedi README).
-      const res = await fetch("https://formsubmit.co/ajax/anto.zambrano@virgilio.it", {
+      const res = await fetch("/api/contatti", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _subject: `Sito web — ${formData.subject}`,
-          _replyto: formData.email,
-          _template: "table",
-          _captcha: "false",
-        }),
+        body: JSON.stringify(formData),
+        signal: AbortSignal.timeout(20000),
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || String(data.success) === "false") {
-        throw new Error(data.message || "invio non riuscito");
+      const data = await res.json().catch(() => null);
+      if (!res.ok || data?.success !== true) {
+        throw new Error(data?.message || "Non è stato possibile confermare l’invio. Usa email o WhatsApp qui sotto.");
       }
       setStatus({ submitting: false, submitted: true, error: null });
       setFormData({ name: "", email: "", subject: "", message: "" });
@@ -52,11 +43,16 @@ export default function ContactForm() {
       setStatus({
         submitting: false,
         submitted: false,
-        error:
-          "Invio non riuscito. Scrivimi direttamente a anto.zambrano@virgilio.it o chiamami al +39 338 183 5951.",
+        error: err.name === "TimeoutError" || err.name === "TypeError"
+          ? "Non è stato possibile confermare l’invio. Il testo è conservato: puoi inviarlo tramite email o WhatsApp."
+          : err.message,
       });
     }
   };
+
+  const directMessage = `Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+  const mailHref = `mailto:anto.zambrano@virgilio.it?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(directMessage)}`;
+  const whatsappHref = `https://wa.me/393381835951?text=${encodeURIComponent(`${formData.subject}\n\n${directMessage}`)}`;
 
   return (
     <section id="contatti" className="py-28 sm:py-36 bg-background relative">
@@ -163,6 +159,7 @@ export default function ContactForm() {
                       type="text"
                       name="name"
                       id="name"
+                      maxLength={150}
                       required
                       value={formData.name}
                       onChange={handleChange}
@@ -179,6 +176,7 @@ export default function ContactForm() {
                       type="email"
                       name="email"
                       id="email"
+                      maxLength={254}
                       required
                       value={formData.email}
                       onChange={handleChange}
@@ -196,6 +194,7 @@ export default function ContactForm() {
                     type="text"
                     name="subject"
                     id="subject"
+                      maxLength={200}
                     required
                     value={formData.subject}
                     onChange={handleChange}
@@ -211,6 +210,7 @@ export default function ContactForm() {
                   <textarea
                     name="message"
                     id="message"
+                      maxLength={10000}
                     required
                     rows="5"
                     value={formData.message}
@@ -241,7 +241,14 @@ export default function ContactForm() {
                 </button>
 
                 {status.error && (
-                  <p className="mt-2 text-sm text-red-500 font-medium">{status.error}</p>
+                  <div role="alert" className="space-y-3">
+                    <p className="mt-2 text-sm text-red-500 font-medium">{status.error}</p>
+                    <div className="flex flex-wrap gap-4 text-sm text-primary">
+                      <a href={mailHref} className="underline underline-offset-4">Apri il messaggio nella tua email</a>
+                      <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Apri il messaggio su WhatsApp</a>
+                    </div>
+                    <p className="text-xs text-foreground/60">Il messaggio sarà inviato solo dopo la tua conferma nell’app scelta.</p>
+                  </div>
                 )}
               </form>
             )}
