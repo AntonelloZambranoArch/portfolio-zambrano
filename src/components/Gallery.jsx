@@ -163,7 +163,7 @@ export default function Gallery() {
                     className="aspect-video w-full bg-black object-contain"
                   />
                   <a
-                    href="/portfolio/coppola-capoluogo/film-con-musica.mp4"
+                    href="/portfolio/coppola-capoluogo/film-chill-house-rev03.mp4"
                     className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
                   >
                     Apri il video a schermo intero
@@ -208,3 +208,4 @@ export default function Gallery() {
     </section>
   );
 }
+

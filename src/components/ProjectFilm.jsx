@@ -31,7 +31,7 @@ export default function ProjectFilm({ poster, className, onError }) {
         height="1080"
         poster={poster}
         onError={onError}
-        src="/portfolio/coppola-capoluogo/film-con-musica.mp4"
+        src="/portfolio/coppola-capoluogo/film-chill-house-rev03.mp4"
         aria-label="Cortometraggio Capoluogo Coppola con musica e didascalie"
       />
       <button
@@ -46,3 +46,4 @@ export default function ProjectFilm({ poster, className, onError }) {
     </div>
   );
 }
+
