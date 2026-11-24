@@ -154,6 +154,29 @@ export default function Gallery() {
                 </p>
               </header>
 
+              {p.slug === "coppola-capoluogo" && (
+                <section aria-label="Cortometraggio Capoluogo Coppola" className="mb-10">
+                  <h3 className="mb-4 font-serif text-3xl text-foreground">Guarda il cortometraggio</h3>
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    poster={p.cover}
+                    width="1280"
+                    height="720"
+                    className="aspect-video w-full bg-black object-contain"
+                    src="/portfolio/coppola-capoluogo/film.mp4"
+                    aria-label="Cortometraggio Capoluogo Coppola — 36 secondi"
+                  />
+                  <a
+                    href="/portfolio/coppola-capoluogo/film.mp4"
+                    className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
+                  >
+                    Apri il video a schermo intero
+                  </a>
+                </section>
+              )}
+
               <Mosaic project={p} onOpen={(index) => setLightbox({ slug: p.slug, index })} />
 
               <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-base font-light tracking-wide">
