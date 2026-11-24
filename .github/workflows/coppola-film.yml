@@ -1,0 +1,28 @@
+name: Coppola architectural film
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/coppola-film.yml']
+permissions:
+  contents: write
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d2759744c9af683
+      - name: Render original architectural images
+        shell: bash
+        run: |
+          set -euo pipefail
+          d=public/portfolio/coppola-capoluogo
+          mkdir -p /tmp/coppola
+          for n in 03 04 02 05 06 07; do
+            ffmpeg -hide_banner -loglevel error -y -i "$d/$n.webp" -vf "scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,zoompan=z='1+0.045*(1-cos(PI*on/179))/2':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=180:s=1920x1080:fps=30,setsar=1,format=yuv420p" -frames:v 180 -an -c:v libx264 -preset fast -crf 19 "/tmp/coppola/$n.mp4"
+          done
+          ffmpeg -hide_banner -loglevel error -y -filter_complex_threads 1 -i /tmp/coppola/03.mp4 -i /tmp/coppola/04.mp4 -i /tmp/coppola/02.mp4 -i /tmp/coppola/05.mp4 -i /tmp/coppola/06.mp4 -i /tmp/coppola/07.mp4 -filter_complex "[0:v][1:v]xfade=transition=fade:duration=1.2:offset=4.8[a];[a][2:v]xfade=transition=fade:duration=1.2:offset=9.6[b];[b][3:v]xfade=transition=fade:duration=1.2:offset=14.4[c];[c][4:v]xfade=transition=fade:duration=1.2:offset=19.2[d];[d][5:v]xfade=transition=fade:duration=1.2:offset=24[e];[e]format=yuv420p[v]" -map "[v]" -an -c:v libx264 -preset fast -crf 23 -movflags +faststart "$d/film.mp4"
+          test -s "$d/film.mp4"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$d/film.mp4"
+          git commit -m "Add Coppola architectural film" 
+          git push
