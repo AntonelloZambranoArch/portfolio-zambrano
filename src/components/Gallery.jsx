@@ -29,7 +29,7 @@ function Tile({ project, index, className, onOpen, remaining }) {
         height={h}
         loading="lazy"
         decoding="async"
-        className={`absolute inset-0 h-full w-full transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04] ${
+        className={`absolute inset-0 h-full w-full  ${
           contain ? "object-contain p-2" : "object-cover"
         }`}
       />
@@ -165,11 +165,11 @@ export default function Gallery() {
                     width="1280"
                     height="720"
                     className="aspect-video w-full bg-black object-contain"
-                    src="/portfolio/coppola-capoluogo/film.mp4"
-                    aria-label="Cortometraggio Capoluogo Coppola — 36 secondi"
+                    src="/portfolio/coppola-capoluogo/film-editoriale.mp4"
+                    aria-label="Cortometraggio Capoluogo Coppola — con musica e didascalie"
                   />
                   <a
-                    href="/portfolio/coppola-capoluogo/film.mp4"
+                    href="/portfolio/coppola-capoluogo/film-editoriale.mp4"
                     className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
                   >
                     Apri il video a schermo intero

@@ -58,7 +58,7 @@ export default function CaseStudyView({ project }) {
           {filmUnavailable && (
             <p role="status" className="mb-4 text-foreground/80">Il video non è disponibile al momento. Riprova tra poco.</p>
           )}
-          <video className="aspect-video w-full bg-black" controls playsInline preload="metadata" poster={project.cover} onError={() => setFilmUnavailable(true)} src="/portfolio/coppola-capoluogo/film.mp4" aria-label="Film architettonico Capoluogo Coppola" />
+          <video className="aspect-video w-full bg-black" controls playsInline preload="none" poster={project.cover} onError={() => setFilmUnavailable(true)} src="/portfolio/coppola-capoluogo/film-editoriale.mp4" aria-label="Film architettonico Capoluogo Coppola" />
         </section>
       )}
 

@@ -30,60 +30,66 @@ export const projects = [
     "teaser": "Riqualificazione di un'area industriale dismessa: nuovo polo residenziale di 60 alloggi in classe A4, standard NZEB.",
     "fullDesc": "Progetto di Rigenerazione Urbana: riqualificazione di un'area industriale dismessa, ai sensi della normativa regionale Campania. L'ex industria conserviera diventa un nuovo polo residenziale di pregio, con cessione al Comune di una zona attrezzata a verde pubblico e parcheggio. 60 alloggi in classe A4, standard NZEB, con consumi ridotti fino a 10 volte.",
     "captions": [
-      "Inquadramento dell'area di intervento: stato di fatto dell'ex sito industriale, perimetro e posizione strategica.",
-      "Vista aerea e planivolumetria: compattezza dell'impianto, copertura piana e spazi aperti.",
-      "Prospetto principale: scansione delle facciate, pieni e vuoti, balconate ampie.",
-      "Prospettiva d'insieme: integrazione volumetrica, aree esterne e pensilina d'accesso.",
-      "Dettaglio prospettico: il varco di accesso, finiture di pregio e illuminazione.",
-      "Percorsi pedonali e integrazione del verde: piano terra e ingressi ai garage.",
-      "Vista notturna: illuminazione integrata nelle facciate."
+        "Inquadramento dell'area di intervento: stato di fatto dell'ex sito industriale, perimetro e posizione strategica.",
+        "Vista aerea e planivolumetria: compattezza dell'impianto, copertura piana e spazi aperti.",
+        "Prospetto principale: scansione delle facciate, pieni e vuoti, balconate ampie.",
+        "Prospettiva d'insieme: integrazione volumetrica, aree esterne e pensilina d'accesso.",
+        "Dettaglio prospettico: il varco di accesso, finiture di pregio e illuminazione.",
+        "Percorsi pedonali e integrazione del verde: piano terra e ingressi ai garage.",
+        "Vista notturna: illuminazione integrata nelle facciate.",
+        "Percorso di arrivo al complesso: il fronte residenziale incorniciato dagli alberi. Immagine originale 7-COPPOLA.tif."
     ],
     "images": [
-      "/portfolio/coppola-capoluogo/01.webp",
-      "/portfolio/coppola-capoluogo/02.webp",
-      "/portfolio/coppola-capoluogo/03.webp",
-      "/portfolio/coppola-capoluogo/04.webp",
-      "/portfolio/coppola-capoluogo/05.webp",
-      "/portfolio/coppola-capoluogo/06.webp",
-      "/portfolio/coppola-capoluogo/07.webp"
+        "/portfolio/coppola-capoluogo/01.webp",
+        "/portfolio/coppola-capoluogo/02.webp",
+        "/portfolio/coppola-capoluogo/03.webp",
+        "/portfolio/coppola-capoluogo/04.webp",
+        "/portfolio/coppola-capoluogo/05.webp",
+        "/portfolio/coppola-capoluogo/06.webp",
+        "/portfolio/coppola-capoluogo/07.webp",
+        "/portfolio/coppola-capoluogo/08.webp"
     ],
     "sizes": [
-      [
-        1741,
-        1183
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ],
-      [
-        1920,
-        1080
-      ]
+        [
+            1741,
+            1183
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ],
+        [
+            1920,
+            1080
+        ]
     ],
     "cover": "/portfolio/coppola-capoluogo/04.webp",
     "coverSize": [
-      1920,
-      1080
+        1920,
+        1080
     ],
     "num": "01"
-  },
+},
   {
     "slug": "baronissi-villa-a-schiera",
     "title": "Villa a Schiera Bifamiliare — Baronissi",

@@ -1,47 +1,16 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { heroImages, heroVideo } from "@/lib/projects";
 
 export default function Hero() {
-  const images = heroImages;
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIdx((prev) => (prev + 1) % images.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, [images.length]);
-
   return (
     <section id="home" className="relative flex min-h-[100svh] w-full items-end overflow-hidden">
-      {heroVideo ? (
-        <video
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          src={heroVideo.src}
-          poster={heroVideo.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      ) : (
-        images.map((img, idx) => (
-          <div
-            key={img}
-            className={`absolute inset-0 z-0 overflow-hidden transition-opacity duration-[2400ms] ease-in-out ${
-              idx === currentIdx ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div
-              key={idx === currentIdx ? `on-${currentIdx}` : `off-${idx}`}
-              className={`h-full w-full bg-cover bg-center ${idx === currentIdx ? "kenburns" : ""}`}
-              style={{ backgroundImage: `url('${img}')` }}
-            />
-          </div>
-        ))
-      )}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className="absolute inset-0 z-0 h-full w-full object-cover"
+        src="/portfolio/coppola-capoluogo/04.webp"
+        alt="Capoluogo Coppola, prospettiva d’insieme del progetto"
+        width="1920"
+        height="1080"
+        fetchPriority="high"
+      />
 
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/40 to-background/30" />
 
@@ -73,14 +42,6 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="absolute bottom-8 right-6 hidden items-center gap-2 sm:right-10 md:flex" aria-hidden="true">
-          {images.map((_, i) => (
-            <span
-              key={i}
-              className={`h-px transition-all duration-700 ${i === currentIdx ? "w-10 bg-primary" : "w-5 bg-foreground/30"}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
