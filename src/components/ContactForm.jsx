@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT_ACCESS_KEY } from "@/lib/contact-config";
 import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from "lucide-react";
 
 export default function ContactForm() {
@@ -27,10 +28,13 @@ export default function ContactForm() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      const res = await fetch("/api/contatti", {
+      if (!CONTACT_ACCESS_KEY) {
+        throw new Error("Il servizio contatti è in configurazione. Puoi inviare il testo tramite email o WhatsApp qui sotto.");
+      }
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, subject: `Sito web — ${formData.subject}`, access_key: CONTACT_ACCESS_KEY, from_name: "Studio Architettura Zambrano", replyto: formData.email }),
         signal: AbortSignal.timeout(20000),
       });
       const data = await res.json().catch(() => null);
