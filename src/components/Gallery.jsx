@@ -165,11 +165,11 @@ export default function Gallery() {
                     width="1280"
                     height="720"
                     className="aspect-video w-full bg-black object-contain"
-                    src="/portfolio/coppola-capoluogo/film-editoriale.mp4"
+                    src="/portfolio/coppola-capoluogo/coppola-cinematic-web.mp4"
                     aria-label="Cortometraggio Capoluogo Coppola — con musica e didascalie"
                   />
                   <a
-                    href="/portfolio/coppola-capoluogo/film-editoriale.mp4"
+                    href="/portfolio/coppola-capoluogo/coppola-cinematic-web.mp4"
                     className="mt-3 inline-block border-b border-primary pb-1 text-sm text-primary"
                   >
                     Apri il video a schermo intero
