@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT_ACCESS_KEY } from "@/lib/contact-config";
 import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from "lucide-react";
 
 export default function ContactForm() {
@@ -24,13 +25,17 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (new FormData(e.currentTarget).get("botcheck")) return;
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      const res = await fetch("/api/contatti", {
+      if (!CONTACT_ACCESS_KEY) {
+        throw new Error("Il servizio contatti è in configurazione. Puoi inviare il testo tramite email o WhatsApp qui sotto.");
+      }
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, subject: `Sito web — ${formData.subject}`, access_key: CONTACT_ACCESS_KEY, from_name: "Studio Architettura Zambrano", replyto: formData.email }),
         signal: AbortSignal.timeout(20000),
       });
       const data = await res.json().catch(() => null);
@@ -51,7 +56,7 @@ export default function ContactForm() {
   };
 
   const directMessage = `Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
-  const mailHref = `mailto:anto.zambrano@virgilio.it?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(directMessage)}`;
+  const mailHref = `mailto:antonellozambrano@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(directMessage)}`;
   const whatsappHref = `https://wa.me/393381835951?text=${encodeURIComponent(`${formData.subject}\n\n${directMessage}`)}`;
 
   return (
@@ -95,8 +100,8 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h5 className="text-sm font-light text-foreground/50">Indirizzo E-mail</h5>
-                  <a href="mailto:anto.zambrano@virgilio.it" className="text-lg font-medium text-foreground hover:text-primary transition-colors mt-1 block break-all">
-                    anto.zambrano@virgilio.it
+                  <a href="mailto:antonellozambrano@gmail.com" className="text-lg font-medium text-foreground hover:text-primary transition-colors mt-1 block break-all">
+                    antonellozambrano@gmail.com
                   </a>
                 </div>
               </div>
@@ -150,6 +155,7 @@ export default function ContactForm() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col">
                     <label htmlFor="name" className="text-sm font-light text-foreground/60 tracking-wide mb-2">

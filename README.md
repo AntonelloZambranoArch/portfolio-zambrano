@@ -9,8 +9,8 @@ Next.js 16 + Tailwind 4. Deploy automatico su Vercel a ogni push su `main`.
 - Foto profilo: aggiungere `public/antonello-zambrano.jpg` (quadrata, 800×800 circa).
 
 ## Modulo contatti
-Il browser invia a `/api/contatti`; il server inoltra a FormSubmit per `anto.zambrano@virgilio.it`.
-La risposta viene considerata positiva soltanto con conferma esplicita del servizio.
-In caso di errore il testo resta disponibile e il visitatore può aprirlo in email o WhatsApp.
-Attivazione una tantum: inviare un primo messaggio di prova dal sito e cliccare il link
-di conferma che arriva nella casella email.
+Invio dal browser tramite Web3Forms alla casella verificata `antonellozambrano@gmail.com`.
+L'identificativo pubblico del modulo è in `src/lib/contact-config.js`; non è una password.
+Il servizio viene chiamato dal browser secondo le indicazioni Web3Forms per il piano gratuito.
+Il successo richiede una risposta esplicita `success: true`; gli errori conservano il testo e offrono email e WhatsApp.
+La vecchia rotta FormSubmit è stata rimossa.
