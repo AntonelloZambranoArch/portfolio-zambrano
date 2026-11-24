@@ -7,6 +7,7 @@ import Lightbox from "./Lightbox";
 
 export default function CaseStudyView({ project }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [filmUnavailable, setFilmUnavailable] = useState(false);
 
   const openLightbox = (idx) => setLightboxIndex(idx);
   const closeLightbox = () => setLightboxIndex(null);
@@ -49,6 +50,14 @@ export default function CaseStudyView({ project }) {
           onClick={() => openLightbox(0)}
         />
       </section>
+
+      {project.slug === "coppola-capoluogo" && !filmUnavailable && (
+        <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-24">
+          <p className="mb-3 text-xs uppercase tracking-[0.22em] text-primary">Architectural film</p>
+          <h2 className="mb-6 font-serif text-3xl font-light text-foreground sm:text-4xl">Capoluogo Coppola — In movimento</h2>
+          <video className="aspect-video w-full bg-black" controls playsInline preload="metadata" poster={project.cover} onError={() => setFilmUnavailable(true)} src="/portfolio/coppola-capoluogo/film.mp4" aria-label="Film architettonico Capoluogo Coppola" />
+        </section>
+      )}
 
       <section className="px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto mb-24">
         <h2 className="font-serif text-2xl text-foreground mb-6 border-b border-foreground/10 pb-3">
