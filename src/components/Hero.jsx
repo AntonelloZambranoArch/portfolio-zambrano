@@ -51,11 +51,11 @@ export default function Hero() {
 
       <div className="relative z-20 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 sm:px-10 md:pb-28">
         <h1 className="rise max-w-4xl font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl md:text-8xl">
-          Spazi su misura, dal primo schizzo al cantiere.
+          L’architettura come espressione del luogo e del vivere.
         </h1>
 
         <p className="rise rise-2 mt-8 max-w-xl text-lg leading-relaxed text-foreground/75 sm:text-xl">
-          Arch. Antonello Zambrano, architetto dal 1996. Progettazione, interior design, strutture e direzione lavori.
+          Lo Studio sviluppa progetti di architettura e interior design attraverso la ricerca spaziale, la conoscenza della materia e il controllo del dettaglio costruttivo.
         </p>
 
         <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-x-10 gap-y-5">
