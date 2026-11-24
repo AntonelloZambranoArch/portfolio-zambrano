@@ -1,10 +1,3 @@
-const stats = [
-  { value: "30+", label: "anni di esperienza" },
-  { value: "60+", label: "cantieri coordinati" },
-  { value: "0", label: "infortuni sul lavoro" },
-  { value: "100%", label: "conformità normativa" },
-];
-
 const expertises = [
   {
     title: "Interior design e alta progettazione",
@@ -31,7 +24,7 @@ export default function Bio() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
             <h2 className="font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl">
-              La visione progettuale dello Studio.
+              Il pensiero progettuale
             </h2>
 
             <div className="mt-12 flex gap-8">
@@ -45,22 +38,19 @@ export default function Bio() {
               />
               <div className="max-w-xl space-y-6 text-lg leading-[1.75] text-foreground/75">
                 <p>
-                  Ogni progetto nasce dalla lettura del luogo, delle esigenze dell’abitare e del rapporto tra spazio, luce e paesaggio. Un percorso che accompagna l’idea iniziale fino alla sua realizzazione.
+                  Fondato nel 1996, lo Studio Architettura Zambrano opera nel campo dell’architettura, dell’interior design e della progettazione integrata.
                 </p>
                 <p>
-                  Con oltre trent’anni di esperienza, lo Studio integra progettazione architettonica ed esecutiva, interior design, progettazione strutturale e direzione dei lavori.
+                  La ricerca progettuale indaga le relazioni tra spazio, materia, luce e contesto, attraverso un processo nel quale composizione architettonica e conoscenza costruttiva concorrono alla definizione dell’opera.
+                </p>
+                <p>
+                  Dalla scala dell’edificio al disegno degli interni, ogni progetto sviluppa una propria identità, interpretando il luogo e le esigenze di chi lo abita.
+                </p>
+                <p>
+                  Il progetto è concepito come un processo unitario, dall’ideazione alla costruzione, nel quale la qualità architettonica trova la sua espressione nella precisione del dettaglio.
                 </p>
               </div>
             </div>
-
-            <dl className="mt-16 grid grid-cols-2 gap-y-10 border-t border-foreground/15 pt-10 sm:grid-cols-4">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <dt className="font-serif text-5xl font-light text-primary sm:text-6xl">{s.value}</dt>
-                  <dd className="mt-2 text-base text-foreground/60">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           <div className="lg:col-span-5 lg:pt-4">
