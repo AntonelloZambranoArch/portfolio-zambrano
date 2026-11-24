@@ -31,7 +31,7 @@ export default function Bio() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
             <h2 className="font-serif text-5xl font-light leading-[1.02] text-foreground sm:text-7xl">
-              Architetto e strutturista, con trent'anni di cantiere.
+              La visione progettuale dello Studio.
             </h2>
 
             <div className="mt-12 flex gap-8">
@@ -45,10 +45,10 @@ export default function Bio() {
               />
               <div className="max-w-xl space-y-6 text-lg leading-[1.75] text-foreground/75">
                 <p>
-                  Sono un architetto del settore edile e delle opere civili, con una sensibilità particolare per gli spazi esclusivi su misura. Il mio lavoro unisce visione estetica, rigore normativo e capacità di governare la complessità tecnica.
+                  Ogni progetto nasce dalla lettura del luogo, delle esigenze dell’abitare e del rapporto tra spazio, luce e paesaggio. Un percorso che accompagna l’idea iniziale fino alla sua realizzazione.
                 </p>
                 <p>
-                  In trent'anni ho diretto e coordinato oltre 60 cantieri, dalla progettazione di massima ed esecutiva all'interior design, fino alla direzione dei lavori e al coordinamento della sicurezza.
+                  Con oltre trent’anni di esperienza, lo Studio integra progettazione architettonica ed esecutiva, interior design, progettazione strutturale e direzione dei lavori.
                 </p>
               </div>
             </div>
